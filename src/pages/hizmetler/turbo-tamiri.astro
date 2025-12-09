@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import ServiceDetail from '../../components/ServiceDetail.astro';
-// import heroImage from '../../assets/hizmetler/turbo-tamiri-hero.jpg';
+import heroImage from '../../assets/hizmetler/turbo-tamiri-hero.jpg';
 
 const pageTitle = 'Turbo Tamiri | İkitelli Turbocu | Profesyonel Turbo Onarım Hizmeti';
 const pageDescription = 'İkitelli\'de tüm marka turbo tamiri hizmeti. Bilgisayarlı arıza tespiti, garantili işçilik, aynı gün teslim. Profesyonel turbo onarım ve bakım hizmeti için bize ulaşın.';
@@ -81,6 +81,7 @@ const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-tamiri';
   <ServiceHero
     title="Turbo Tamiri"
     subtitle="Profesyonel Turbo Onarım ve Bakım Hizmeti"
+    imageSrc={heroImage}
     imageAlt="Turbo tamiri işlemi"
   />
 

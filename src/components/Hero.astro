@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets';
-// Placeholder imports - these files should be added to src/assets/
-// import heroPoster from '../assets/hero/hero-poster.jpg';
+import heroPoster from '../assets/hero/hero-poster.jpg';
 // import heroBg from '../assets/hero/hero-bg.jpg';
 ---
 
@@ -18,6 +17,7 @@ import { Image } from 'astro:assets';
         preload="none"
         loading="lazy"
         aria-label="Turbo tamiri tanıtım videosu"
+        poster={heroPoster.src}
       >
         <source src="/images/hero-turbo.mp4" type="video/mp4" />
       </video>
