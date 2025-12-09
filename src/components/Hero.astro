@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 // import heroBg from '../assets/hero/hero-bg.jpg';
 ---
 
-<section id="anasayfa" class="relative min-h-[90vh] flex items-center overflow-hidden">
+<section id="anasayfa" class="relative min-h-[90vh] md:min-h-[90vh] flex items-start md:items-center overflow-hidden -mt-16 md:mt-0">
   <!-- Background with vignette effect -->
   <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
     <!-- Background image will be here when added -->
@@ -21,17 +21,17 @@ import { Image } from 'astro:assets';
     <div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
   </div>
 
-  <div class="container mx-auto px-4 py-20 relative">
+  <div class="container mx-auto px-4 pt-16 pb-8 md:pt-12 md:pb-12 lg:pt-20 lg:pb-20 relative">
     <div class="grid lg:grid-cols-2 gap-12 items-center">
       <!-- Left: Headline and CTA -->
       <div class="text-center lg:text-left">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
           Turbo Tamir + <span class="text-primary">Revizyon</span> Merkezi
         </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+        <p class="text-xl md:text-2xl text-gray-300 mb-4 md:mb-8 leading-relaxed">
           Profesyonel Turbo Tamiri | Ücretsiz Arıza Tespiti
         </p>
-        <p class="text-lg text-gray-400 mb-10 leading-relaxed">
+        <p class="text-lg text-gray-400 mb-6 md:mb-10 leading-relaxed">
           İkitelli'de aynı gün turbo tamiri ve revizyon hizmeti. Bilgisayarlı arıza tespiti, 
           garantili işçilik, orijinal yedek parça. Her marka turbo için uzman servis.
         </p>
