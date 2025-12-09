@@ -11,10 +11,10 @@ interface Props {
 const { title, subtitle, imageSrc, imageAlt } = Astro.props;
 ---
 
-<section class="relative overflow-hidden z-0">
+<section class="relative overflow-hidden z-0 m-0">
   <!-- Hero Image - Mobilde header'ın hemen altında, tam genişlik -->
   {imageSrc && (
-    <div class="w-full md:hidden">
+    <div class="w-full md:hidden m-0">
       <div class="aspect-video bg-dark-lighter relative">
         <Image
           src={imageSrc}
