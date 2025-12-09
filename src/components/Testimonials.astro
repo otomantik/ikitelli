@@ -1,0 +1,61 @@
+---
+const testimonials = [
+  {
+    name: 'Ahmet K.',
+    rating: 5,
+    review: 'Turbo arızasını hızlıca tespit edip, aynı gün tamir ettiler. Çok memnun kaldım. Garanti de verdiler. Teşekkürler.',
+    service: 'Turbo Revizyon',
+  },
+  {
+    name: 'Ayşe K.',
+    rating: 5,
+    review: 'İkitelli\'de bu kadar profesyonel bir turbo servisi bulmak harika. Fiyatları da uygun. Kesinlikle tavsiye ederim.',
+    service: 'Turbo Tamiri',
+  },
+  {
+    name: 'Ali R.',
+    rating: 5,
+    review: 'Revizyon kalitesi çok iyi. 6 aydır hiç sorun yaşamadım. Bilgisayarlı test yapmaları da güven verdi.',
+    service: 'Turbo Revizyon',
+  },
+  {
+    name: 'Mehmet Y.',
+    rating: 5,
+    review: 'Ücretsiz arıza tespiti yaptılar, çok profesyonel yaklaştılar. Aynı gün teslim ettiler. Çok memnun kaldım.',
+    service: 'Turbo Servisi',
+  },
+];
+---
+
+<section id="yorumlar" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+      Müşteri <span class="text-primary">Yorumları</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Müşterilerimizin deneyimleri bizim için en değerli geri bildirimdir.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {testimonials.map((testimonial) => (
+        <article class="bg-dark-light p-6 rounded-md border border-dark-lighter hover:border-primary transition-colors">
+          <div class="flex items-center gap-1 mb-3">
+            {Array.from({ length: testimonial.rating }).map(() => (
+              <span class="text-primary text-lg">⭐</span>
+            ))}
+          </div>
+          <p class="text-gray-300 mb-4 leading-relaxed text-sm italic">
+            "{testimonial.review}"
+          </p>
+          <div class="flex items-center justify-between">
+            <p class="text-white font-semibold">{testimonial.name}</p>
+            <span class="bg-primary/20 text-primary px-3 py-1 rounded-full text-xs font-semibold">
+              {testimonial.service}
+            </span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+

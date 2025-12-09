@@ -1,0 +1,163 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Gizlilik Politikası | İkitelli Turbocu';
+const pageDescription = 'İkitelli Turbocu gizlilik politikası. Kişisel verilerinizin korunması ve kullanımı hakkında bilgi. KVKK uyumlu gizlilik politikası.';
+const canonical = 'https://ikitelliturbocu.com/gizlilik-politikasi';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-br from-dark via-dark-light to-dark">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Gizlilik <span class="text-primary">Politikası</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+          Kişisel verilerinizin korunması bizim için önemlidir
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Privacy Policy Content -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-dark-light p-8 rounded-lg border border-dark-lighter space-y-8">
+          <div class="text-sm text-gray-400 mb-8">
+            <p>Son Güncelleme: {new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          </div>
+
+          <div class="space-y-6 text-gray-300 leading-relaxed">
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">1. Gizlilik Politikası Hakkında</h2>
+              <p>
+                İkitelli Turbocu olarak, kişisel verilerinizin korunmasına büyük önem veriyoruz. Bu Gizlilik Politikası, web sitemizi kullanırken veya hizmetlerimizden yararlanırken topladığımız kişisel bilgilerin nasıl toplandığını, kullanıldığını, korunduğunu ve paylaşıldığını açıklamaktadır.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">2. Toplanan Bilgiler</h2>
+              <p class="mb-3">Hizmetlerimizi sunmak için aşağıdaki bilgileri toplayabiliriz:</p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li><strong class="text-white">İletişim Bilgileri:</strong> Telefon numaranız, WhatsApp bilgileriniz</li>
+                <li><strong class="text-white">İletişim Kayıtları:</strong> Bize gönderdiğiniz mesajlar ve görüşme kayıtları</li>
+                <li><strong class="text-white">Teknik Bilgiler:</strong> Web sitesi kullanım verileri, IP adresi, tarayıcı bilgileri</li>
+                <li><strong class="text-white">Cookies:</strong> Web sitesi deneyiminizi iyileştirmek için çerezler kullanabiliriz</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">3. Bilgilerin Kullanım Amacı</h2>
+              <p class="mb-3">Toplanan bilgiler aşağıdaki amaçlarla kullanılır:</p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Hizmet taleplerinizi karşılamak ve iletişim kurmak</li>
+                <li>Müşteri hizmetleri sağlamak ve destek sunmak</li>
+                <li>Web sitesi deneyimini iyileştirmek</li>
+                <li>Yasal yükümlülüklerimizi yerine getirmek</li>
+                <li>İş faaliyetlerimizi geliştirmek ve analiz yapmak</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">4. Bilgilerin Paylaşılması</h2>
+              <p>
+                Kişisel bilgilerinizi, yasal zorunluluklar dışında üçüncü taraflarla paylaşmıyoruz. Bilgileriniz sadece hizmetlerimizi sunmak için gerekli olduğunda ve yasal yükümlülüklerimiz gereği paylaşılabilir.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">5. Veri Güvenliği</h2>
+              <p>
+                Kişisel bilgilerinizin güvenliğini sağlamak için uygun teknik ve idari önlemleri alıyoruz. Ancak, internet üzerinden veri iletiminin %100 güvenli olmadığını unutmayın.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">6. Çerezler (Cookies)</h2>
+              <p>
+                Web sitemizde, kullanıcı deneyimini iyileştirmek ve web sitesi analizi yapmak için çerezler kullanabiliriz. Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">7. Üçüncü Taraf Hizmetler</h2>
+              <p class="mb-3">
+                Web sitemizde aşağıdaki üçüncü taraf hizmetleri kullanıyoruz:
+              </p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li><strong class="text-white">Google Tag Manager:</strong> Web sitesi analizi ve izleme</li>
+                <li><strong class="text-white">Google Analytics:</strong> Ziyaretçi istatistikleri</li>
+                <li><strong class="text-white">WhatsApp:</strong> İletişim için WhatsApp Business API</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">8. KVKK Haklarınız</h2>
+              <p class="mb-3">
+                6698 sayılı Kişisel Verilerin Korunması Kanunu kapsamında aşağıdaki haklara sahipsiniz:
+              </p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+                <li>Kişisel verileriniz işlenmişse buna ilişkin bilgi talep etme</li>
+                <li>Kişisel verilerin işlenme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+                <li>Yurt içinde veya yurt dışında kişisel verilerin aktarıldığı üçüncü kişileri bilme</li>
+                <li>Kişisel verilerin eksik veya yanlış işlenmiş olması hâlinde bunların düzeltilmesini isteme</li>
+                <li>Kişisel verilerin silinmesini veya yok edilmesini isteme</li>
+                <li>İşlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme</li>
+                <li>Kişisel verilerin kanuna aykırı olarak işlenmesi sebebiyle zarara uğraması hâlinde zararın giderilmesini talep etme</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">9. Veri Saklama Süresi</h2>
+              <p>
+                Kişisel verileriniz, yasal saklama süreleri ve hizmet sunumu için gerekli olduğu süre boyunca saklanır. Bu süre sonunda veriler silinir veya anonim hale getirilir.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">10. Değişiklikler</h2>
+              <p>
+                Bu Gizlilik Politikası, gerekli görüldüğünde güncellenebilir. Önemli değişiklikler web sitemizde yayınlanacaktır.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">11. İletişim</h2>
+              <p class="mb-3">
+                Gizlilik politikamız hakkında sorularınız veya kişisel verilerinizle ilgili talepleriniz için:
+              </p>
+              <div class="bg-dark p-4 rounded-lg">
+                <p class="text-white font-semibold mb-2">İkitelli Turbocu</p>
+                <p class="text-gray-300">Güngören-Bağcılar Sanayi Sitesi 15. Blok No: 13, Başakşehir / İstanbul</p>
+                <p class="text-gray-300">Telefon: <a href="tel:+905326584722" class="text-primary">+90 532 658 47 22</a></p>
+                <p class="text-gray-300">E-posta: info@ikitelliturbocu.com (eğer e-posta adresi varsa)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="mt-8 text-center">
+          <a
+            href="/"
+            class="inline-block bg-primary text-dark px-6 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors"
+          >
+            Ana Sayfaya Dön
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+

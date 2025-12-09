@@ -1,0 +1,50 @@
+---
+const steps = [
+  {
+    number: '01',
+    title: 'Arıza Tespiti',
+    description: 'Araç üzerinde veya sökülmüş turbo üzerinde ücretsiz arıza tespiti yapıyoruz. Modern cihazlarla detaylı analiz.',
+  },
+  {
+    number: '02',
+    title: 'Fiyat Onayı',
+    description: 'Detaylı fiyat teklifi sunuyoruz. Şeffaf fiyatlandırma. Onayınızdan sonra işleme başlıyoruz.',
+  },
+  {
+    number: '03',
+    title: 'Tamir / Revizyon',
+    description: 'Profesyonel ekipmanlarla turbo revizyon veya tamir işlemi gerçekleştiriyoruz. Kaliteli yedek parça kullanımı.',
+  },
+  {
+    number: '04',
+    title: 'Test + Teslimat',
+    description: 'Balans testi ve performans kontrolü yapıldıktan sonra garantili teslimat. Son kontroller ve onay.',
+  },
+];
+---
+
+<section id="nasil-calisiyoruz" class="py-20 bg-dark-light">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+      Nasıl <span class="text-primary">Çalışıyoruz</span>?
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Basit ve şeffaf süreçlerimizle turbo ihtiyacınıza hızlı çözüm sunuyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+      {steps.map((step, index) => (
+        <div class="relative">
+          {index < steps.length - 1 && (
+            <div class="hidden lg:block absolute top-12 left-full -translate-x-1/2 w-[calc(100%-2rem)] h-0.5 bg-primary z-0"></div>
+          )}
+          <div class="relative bg-dark p-6 rounded-md border border-dark-lighter hover:border-primary transition-colors">
+            <div class="text-primary text-4xl font-bold mb-4">{step.number}</div>
+            <h3 class="text-xl font-semibold mb-3 text-white">{step.title}</h3>
+            <p class="text-gray-400 leading-relaxed text-sm">{step.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

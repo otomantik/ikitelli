@@ -1,0 +1,94 @@
+---
+import { Image } from 'astro:assets';
+// import mapImage from '../assets/map.jpg';
+---
+
+<section id="iletisim" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+      <span class="text-primary">İletişim</span> & Konum
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Bize ulaşın, turbo ihtiyaçlarınıza profesyonel çözüm sunalım.
+    </p>
+    <div class="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-2xl font-semibold mb-6 text-white">İkitelli Turbocu</h3>
+        <div class="space-y-4 mb-8">
+          <div>
+            <p class="text-gray-300 mb-2 font-semibold">📍 Adres</p>
+            <p class="text-gray-400">
+              Güngören-Bağcılar Sanayi Sitesi<br />
+              15. Blok No: 13<br />
+              Başakşehir / İstanbul
+            </p>
+          </div>
+          <div>
+            <p class="text-gray-300 mb-2 font-semibold">📞 Telefon</p>
+            <a href="tel:+905326584722" class="text-primary hover:text-primary-dark">
+              +90 532 658 47 22
+            </a>
+          </div>
+          <div>
+            <p class="text-gray-300 mb-2 font-semibold">🕐 Çalışma Saatleri</p>
+            <p class="text-gray-400">
+              Pazartesi - Cuma: 09:00 - 18:00<br />
+              Cumartesi: 09:00 - 17:00<br />
+              Pazar: Kapalı
+            </p>
+          </div>
+        </div>
+        <div class="flex flex-col gap-4">
+          <a
+            href="tel:+905326584722"
+            class="bg-primary text-dark px-8 py-4 rounded-md font-bold text-lg hover:bg-primary-dark transition-colors text-center shadow-lg"
+          >
+            📞 Hemen Ara
+          </a>
+          <a
+            href="https://wa.me/905326584722?text=Merhaba, turbo hizmeti hakkında bilgi almak istiyorum."
+            target="_blank"
+            rel="noopener noreferrer"
+            class="bg-whatsapp text-white px-8 py-4 rounded-md font-bold text-lg hover:opacity-90 transition-opacity text-center shadow-lg"
+          >
+            💬 WhatsApp'tan Yaz
+          </a>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="relative rounded-lg overflow-hidden border-2 border-dark-lighter">
+        <a
+          href="https://www.google.com/maps/search/?api=1&query=Güngören-Bağcılar+Sanayi+Sitesi+15.+Blok+No:+13,+Başakşehir,+İstanbul"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Google Maps'te konumu aç"
+          class="block"
+        >
+          <!-- Placeholder map - replace with actual map image -->
+          <div class="aspect-video bg-dark-lighter flex items-center justify-center">
+            <div class="text-center p-8">
+              <svg class="w-16 h-16 mx-auto mb-4 text-primary opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              <p class="text-gray-400 mb-2">Harita görseli buraya eklenecek</p>
+              <p class="text-gray-500 text-sm">Google Maps'te açmak için tıklayın</p>
+            </div>
+          </div>
+          <!-- When map image is available, use this:
+          <Image
+            src={mapImage}
+            alt="İkitelli Turbocu konum haritası"
+            class="w-full h-auto hover:opacity-90 transition-opacity"
+            loading="lazy"
+            quality={85}
+          />
+          -->
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+

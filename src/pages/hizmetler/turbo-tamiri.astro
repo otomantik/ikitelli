@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-tamiri-hero.jpg';
+
+const pageTitle = 'Turbo Tamiri | İkitelli Turbocu | Profesyonel Turbo Onarım Hizmeti';
+const pageDescription = 'İkitelli\'de tüm marka turbo tamiri hizmeti. Bilgisayarlı arıza tespiti, garantili işçilik, aynı gün teslim. Profesyonel turbo onarım ve bakım hizmeti için bize ulaşın.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-tamiri';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:locale" content="tr_TR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://ikitelliturbocu.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hizmetler",
+          "item": "https://ikitelliturbocu.com/hizmetler"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Turbo Tamiri",
+          "item": canonical
+        }
+      ]
+    })} />
+    
+    <!-- Service Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Turbo Tamiri",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "İkitelli Turbocu",
+        "telephone": "+905326584722",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Güngören-Bağcılar Sanayi Sitesi 15. Blok No: 13",
+          "addressLocality": "Başakşehir",
+          "addressRegion": "İstanbul",
+          "addressCountry": "TR"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "İstanbul"
+      },
+      "description": pageDescription
+    })} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Tamiri"
+    subtitle="Profesyonel Turbo Onarım ve Bakım Hizmeti"
+    imageAlt="Turbo tamiri işlemi"
+  />
+
+  <ServiceDetail
+    title="Turbo Tamiri"
+    content={[
+      'İkitelli Turbocu olarak, tüm marka ve model turbolar için kapsamlı tamir hizmeti sunuyoruz. Yılların deneyimi ve modern ekipmanlarımızla turbo arızalarınızı hızlı ve kalıcı şekilde çözüyoruz.',
+      'Turbo sisteminizde meydana gelen her türlü arıza, profesyonel ekibimiz tarafından bilgisayarlı test cihazları ile tespit edilir. Arızanın kaynağı belirlendikten sonra, orijinal veya eşdeğer kalitede yedek parça kullanarak onarım işlemi gerçekleştirilir.',
+      'Tüm tamir işlemlerimizde yazılı garanti sunuyoruz. İşçilik kalitesi ve kullanılan malzemeler konusunda tam güvence veriyoruz.'
+    ]}
+    features={[
+      'Tüm marka turbo tamiri (Garrett, BorgWarner, Holset, IHI, Mitsubishi, vb.)',
+      'Bilgisayarlı arıza tespiti ve analiz',
+      'Orijinal ve eşdeğer kalitede yedek parça kullanımı',
+      'Yazılı garanti ile güvenli hizmet',
+      'Aynı gün teslim imkânı (acil durumlarda)',
+      'Uygun fiyat garantisi ve şeffaf fiyatlandırma',
+      'Profesyonel işçilik ve deneyimli ekip'
+    ]}
+    process={[
+      {
+        step: 'Arıza Tespiti',
+        description: 'Ücretsiz ön kontrol ve bilgisayarlı test ile turbo arızası tespit edilir. Detaylı analiz raporu sunulur.'
+      },
+      {
+        step: 'Fiyat Teklifi',
+        description: 'Arıza tespiti sonrası şeffaf fiyat teklifi hazırlanır. Onayınızdan sonra işleme başlanır.'
+      },
+      {
+        step: 'Tamir İşlemi',
+        description: 'Deneyimli teknisyenlerimiz tarafından profesyonel tamir işlemi gerçekleştirilir. Orijinal parça kullanımına özen gösterilir.'
+      },
+      {
+        step: 'Test ve Kontrol',
+        description: 'Tamir sonrası balans testi ve performans kontrolü yapılır. Tüm testlerden geçen turbo garantili olarak teslim edilir.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+

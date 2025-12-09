@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-temizligi-hero.jpg';
+
+const pageTitle = 'Turbo Temizliği | İkitelli Turbocu | Profesyonel Turbo Temizleme Hizmeti';
+const pageDescription = 'İkitelli\'de profesyonel turbo temizleme hizmeti. Karbon birikintisi ve kirlerin giderilmesi. Turbo performansını artırın, ömrünü uzatın. Uygun fiyat garantisi.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-temizligi';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Temizliği"
+    subtitle="Profesyonel Turbo Temizleme ve Bakım Hizmeti"
+    imageAlt="Turbo temizlik işlemi"
+  />
+
+  <ServiceDetail
+    title="Turbo Temizliği"
+    content={[
+      'Turbo sistemleri, zamanla karbon birikintisi, yağ kalıntıları ve çeşitli kirlerle kaplanır. Bu birikintiler turbo performansını düşürür, yakıt tüketimini artırır ve turbo ömrünü kısaltır. Düzenli turbo temizliği, turbonuzun optimum performansla çalışmasını sağlar.',
+      'İkitelli Turbocu olarak, profesyonel temizleme ekipmanları ve özel solüsyonlar kullanarak turbo temizliği hizmeti sunuyoruz. Turbo bileşenlerini hassas şekilde temizleyerek, fabrika çıkış performansına yakın bir seviyeye getiriyoruz.',
+      'Temizlik işlemi sonrası turbo performansında gözle görülür artış olur, yakıt tüketimi azalır ve turbo ömrü uzar. Bu nedenle düzenli bakım olarak turbo temizliği yaptırmanızı öneriyoruz.'
+    ]}
+    features={[
+      'Profesyonel temizleme ekipmanları',
+      'Özel temizleme solüsyonları',
+      'Karbon birikintisi giderilmesi',
+      'Yağ kalıntıları temizliği',
+      'Kompresör ve türbin kanatları temizliği',
+      'Performans artışı garantisi',
+      'Yakıt tasarrufu',
+      'Uzun ömür garantisi'
+    ]}
+    process={[
+      {
+        step: 'Sökme ve İnceleme',
+        description: 'Turbo sökülür ve bileşenleri detaylı şekilde incelenir. Temizlenmesi gereken alanlar tespit edilir.'
+      },
+      {
+        step: 'Temizleme İşlemi',
+        description: 'Özel temizleme solüsyonları ve ekipmanlarla karbon birikintileri, yağ kalıntıları ve kirler giderilir.'
+      },
+      {
+        step: 'Durulama ve Kurutma',
+        description: 'Temizleme sonrası tüm bileşenler durulanır ve özel yöntemlerle kurutulur. Herhangi bir kalıntı bırakılmaz.'
+      },
+      {
+        step: 'Montaj ve Test',
+        description: 'Temizlenen turbo tekrar monte edilir ve test edilir. Performans kontrolü yapılarak teslim edilir.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+
+

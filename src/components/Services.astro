@@ -1,0 +1,69 @@
+---
+const services = [
+  {
+    title: 'Turbo Tamiri',
+    slug: 'turbo-tamiri',
+    description: 'Tüm marka turbo tamiri hizmeti. Arıza tespiti, onarım ve bakım işlemleri. Garantili işçilik ile profesyonel çözüm.',
+    icon: '⚙️',
+  },
+  {
+    title: 'Turbo Revizyonu',
+    slug: 'turbo-revizyonu',
+    description: 'Eski veya arızalı turbolarınızı yeniden üretim kalitesinde revizyon ediyoruz. Balans ayarı ve performans testi dahil.',
+    icon: '🔧',
+  },
+  {
+    title: 'Turbo Arıza Tespiti',
+    slug: 'turbo-ariza-tespiti',
+    description: 'Bilgisayarlı test cihazları ile turbo arızasını ücretsiz ön kontrol yaparak hızlı ve doğru şekilde tespit ediyoruz.',
+    icon: '🔍',
+  },
+  {
+    title: 'Turbo Temizliği',
+    slug: 'turbo-temizligi',
+    description: 'Profesyonel turbo temizleme hizmeti. Karbon birikintisi ve kirlerin giderilmesi. Uzun ömür için önemli bakım.',
+    icon: '✨',
+  },
+  {
+    title: 'Turbo Satışı',
+    slug: 'turbo-satisi',
+    description: 'Yeni ve revizyonlu turbo satışı. Tüm markalar için orijinal ve eşdeğer turbo temini. Uygun fiyat garantisi.',
+    icon: '🛒',
+  },
+  {
+    title: 'Turbo Servisi',
+    slug: 'turbo-servisi',
+    description: 'Sökme-takma, balans ayarı, performans testi. Araçtan sökmeden ön kontrol ve test hizmeti. Hızlı teslimat.',
+    icon: '🛠️',
+  },
+];
+---
+
+<section id="hizmetler" class="py-20 bg-dark-light">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+      <span class="text-primary">Hizmetlerimiz</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      İkitelli Turbocu olarak her türlü turbo ihtiyacınıza profesyonel çözümler sunuyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {services.map((service) => (
+        <article class="bg-white text-dark p-6 rounded-md border-t-4 border-primary shadow-lg hover:shadow-xl transition-shadow">
+          <div class="text-4xl mb-4">{service.icon}</div>
+          <h3 class="text-xl font-bold mb-3">{service.title}</h3>
+          <p class="text-gray-600 mb-4 leading-relaxed text-sm">
+            {service.description}
+          </p>
+          <a
+            href={`/hizmetler/${service.slug}`}
+            class="inline-flex items-center text-primary hover:text-primary-dark font-semibold text-sm"
+          >
+            Detaylı Bilgi Al →
+          </a>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+

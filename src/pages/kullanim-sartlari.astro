@@ -1,0 +1,167 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = 'Kullanım Şartları | İkitelli Turbocu';
+const pageDescription = 'İkitelli Turbocu web sitesi kullanım şartları. Site kullanımı, hizmetler ve şartlar hakkında bilgi.';
+const canonical = 'https://ikitelliturbocu.com/kullanim-sartlari';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-br from-dark via-dark-light to-dark">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Kullanım <span class="text-primary">Şartları</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+          Web sitemizi kullanmadan önce lütfen şartları okuyun
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto">
+        <div class="bg-dark-light p-8 rounded-lg border border-dark-lighter space-y-8">
+          <div class="text-sm text-gray-400 mb-8">
+            <p>Son Güncelleme: {new Date().toLocaleDateString('tr-TR', { year: 'numeric', month: 'long', day: 'numeric' })}</p>
+          </div>
+
+          <div class="space-y-6 text-gray-300 leading-relaxed">
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">1. Genel Hükümler</h2>
+              <p>
+                Bu Kullanım Şartları, İkitelli Turbocu web sitesinin kullanımını düzenler. Siteyi kullanarak bu şartları kabul etmiş sayılırsınız. Eğer bu şartları kabul etmiyorsanız, lütfen siteyi kullanmayın.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">2. Web Sitesi Kullanımı</h2>
+              <p class="mb-3">Web sitemizi aşağıdaki kurallara uygun olarak kullanabilirsiniz:</p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Site içeriğini yasal amaçlarla kullanabilirsiniz</li>
+                <li>Site içeriğini ticari amaçlarla kopyalayamaz veya dağıtamazsınız</li>
+                <li>Siteye zarar verecek veya erişimi engelleyecek faaliyetlerde bulunamazsınız</li>
+                <li>Yasadışı, tehlikeli veya zararlı içerik gönderemezsiniz</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">3. Hizmetler</h2>
+              <p class="mb-3">
+                İkitelli Turbocu olarak aşağıdaki hizmetleri sunmaktayız:
+              </p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Turbo tamiri</li>
+                <li>Turbo revizyonu</li>
+                <li>Turbo arıza tespiti</li>
+                <li>Turbo temizliği</li>
+                <li>Turbo satışı</li>
+                <li>Turbo servisi (sökme-takma, balans, test)</li>
+              </ul>
+              <p class="mt-4">
+                Hizmet fiyatları ve detaylar hakkında bilgi almak için bizimle iletişime geçmeniz gerekmektedir. Web sitesindeki bilgiler genel bilgilendirme amaçlıdır.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">4. Fiyatlandırma</h2>
+              <p>
+                Hizmet fiyatları, turbo markası, arıza tipi ve gerekli yedek parçalara göre değişiklik gösterebilir. Kesin fiyat bilgisi için öncelikle ücretsiz arıza tespiti yapılması ve fiyat teklifi sunulması gerekmektedir. Web sitesindeki fiyat bilgileri referans amaçlıdır.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">5. Garanti</h2>
+              <p>
+                Tüm tamir ve revizyon işlemlerimizde yazılı garanti sunuyoruz. Garanti koşulları işlem sırasında müşteriye yazılı olarak bildirilir. Garanti süresi ve kapsamı işlem tipine göre değişiklik gösterebilir.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">6. Sorumluluk Reddi</h2>
+              <p class="mb-3">
+                Web sitesindeki bilgiler genel bilgilendirme amaçlıdır. Aşağıdaki durumlarda sorumluluk kabul etmeyiz:
+              </p>
+              <ul class="list-disc list-inside space-y-2 ml-4">
+                <li>Web sitesinde yer alan bilgilerin doğruluğu veya güncelliği konusunda garanti vermiyoruz</li>
+                <li>Site kullanımından kaynaklanan doğrudan veya dolaylı zararlardan sorumlu değiliz</li>
+                <li>Üçüncü taraf linkler ve içeriklerinden sorumlu değiliz</li>
+                <li>Teknik sorunlar veya site erişim kesintilerinden sorumlu değiliz</li>
+              </ul>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">7. Fikri Mülkiyet Hakları</h2>
+              <p>
+                Web sitesindeki tüm içerik, logo, tasarım ve yazılımlar İkitelli Turbocu'ya aittir. İçerikleri izinsiz kopyalayamaz, çoğaltamaz, dağıtamaz veya ticari amaçlarla kullanamazsınız.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">8. İletişim ve Randevu</h2>
+              <p>
+                Hizmetlerimizden yararlanmak için telefon veya WhatsApp üzerinden bizimle iletişime geçebilirsiniz. Randevu almanızı öneririz. Acil durumlarda aynı gün hizmet sunma imkanımız bulunmaktadır.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">9. Çerezler ve Takip</h2>
+              <p>
+                Web sitemizde, kullanıcı deneyimini iyileştirmek ve site analizi yapmak için çerezler kullanabiliriz. Detaylı bilgi için Gizlilik Politikamızı inceleyebilirsiniz.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">10. Değişiklikler</h2>
+              <p>
+                Bu Kullanım Şartları, gerekli görüldüğünde güncellenebilir. Önemli değişiklikler web sitemizde yayınlanacaktır. Siteyi kullanmaya devam ederek güncel şartları kabul etmiş sayılırsınız.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">11. Uygulanacak Hukuk</h2>
+              <p>
+                Bu Kullanım Şartları Türkiye Cumhuriyeti yasalarına tabidir. Herhangi bir anlaşmazlık durumunda İstanbul mahkemeleri yetkilidir.
+              </p>
+            </div>
+
+            <div>
+              <h2 class="text-2xl font-bold mb-4 text-white">12. İletişim</h2>
+              <p class="mb-3">
+                Kullanım şartları hakkında sorularınız için:
+              </p>
+              <div class="bg-dark p-4 rounded-lg">
+                <p class="text-white font-semibold mb-2">İkitelli Turbocu</p>
+                <p class="text-gray-300">Güngören-Bağcılar Sanayi Sitesi 15. Blok No: 13, Başakşehir / İstanbul</p>
+                <p class="text-gray-300">Telefon: <a href="tel:+905326584722" class="text-primary">+90 532 658 47 22</a></p>
+                <p class="text-gray-300">Çalışma Saatleri: Pazartesi-Cuma 09:00-18:00, Cumartesi 09:00-17:00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Back to Home -->
+        <div class="mt-8 text-center">
+          <a
+            href="/"
+            class="inline-block bg-primary text-dark px-6 py-3 rounded-md font-semibold hover:bg-primary-dark transition-colors"
+          >
+            Ana Sayfaya Dön
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+

@@ -1,0 +1,65 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import FAQ from '../components/FAQ.tsx';
+
+const pageTitle = 'Sıkça Sorulan Sorular | İkitelli Turbocu | Turbo Hizmetleri SSS';
+const pageDescription = 'Turbo tamiri, revizyon, satış ve servis hizmetlerimiz hakkında sıkça sorulan sorular. Turbo arızası, garanti, fiyatlandırma ve daha fazlası.';
+const canonical = 'https://ikitelliturbocu.com/sss';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:locale" content="tr_TR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://ikitelliturbocu.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Sıkça Sorulan Sorular",
+          "item": canonical
+        }
+      ]
+    })} />
+  </head>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-br from-dark via-dark-light to-dark">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Sıkça Sorulan <span class="text-primary">Sorular</span>
+        </h1>
+        <p class="text-xl text-gray-300">
+          Turbo hizmetlerimiz hakkında merak ettikleriniz.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <FAQ client:load />
+</BaseLayout>
+

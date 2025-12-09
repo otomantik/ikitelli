@@ -1,0 +1,67 @@
+---
+import '../styles/global.css';
+import GTMHead from '../components/GTMHead.astro';
+import GTMBody from '../components/GTMBody.astro';
+import Header from '../components/Header.astro';
+import MobileContactBar from '../components/MobileContactBar.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <meta name="format-detection" content="telephone=yes" />
+    <meta name="theme-color" content="#FFC107" />
+    <meta name="color-scheme" content="dark" />
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+    
+    <!-- SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="author" content="İkitelli Turbocu" />
+    <meta name="language" content="Turkish" />
+    <meta name="geo.region" content="TR-34" />
+    <meta name="geo.placename" content="İstanbul" />
+    <meta name="geo.position" content="41.0783;28.7833" />
+    <meta name="ICBM" content="41.0783, 28.7833" />
+    
+    <!-- Resource Hints - Performance Optimization -->
+    <link rel="preconnect" href="https://wa.me" crossorigin />
+    <link rel="dns-prefetch" href="https://wa.me" />
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
+    <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+    <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/favicon.ico" as="image" type="image/x-icon" />
+    
+    <!-- Google Tag Manager - Async loading -->
+    <GTMHead />
+    
+    <slot name="head" />
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <GTMBody />
+    
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <MobileContactBar />
+    <Footer />
+  </body>
+</html>
+

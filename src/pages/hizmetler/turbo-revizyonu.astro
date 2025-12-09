@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-revizyonu-hero.jpg';
+
+const pageTitle = 'Turbo Revizyonu | İkitelli Turbocu | Yeniden Üretim Kalitesinde Revizyon';
+const pageDescription = 'İkitelli\'de turbo revizyon hizmeti. Eski ve arızalı turbolarınızı yeniden üretim kalitesinde revizyon ediyoruz. Balans ayarı, performans testi dahil. Garantili turbo revizyon.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-revizyonu';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Revizyonu"
+    subtitle="Yeniden Üretim Kalitesinde Turbo Revizyon Hizmeti"
+    imageAlt="Turbo revizyon işlemi"
+  />
+
+  <ServiceDetail
+    title="Turbo Revizyonu"
+    content={[
+      'Turbo revizyonu, eski veya arızalı turboların fabrika çıkış kalitesinde yeniden üretilmesi işlemidir. İkitelli Turbocu olarak, tüm turbo bileşenlerini söküp, arızalı parçaları orijinal kalitede yenileriyle değiştirerek turbonuzu adeta yeni bir turbo haline getiriyoruz.',
+      'Revizyon sürecimizde, turbo kompresör ve türbin kanatları, rulmanlar, yağ keçeleri, gövde parçaları ve diğer tüm kritik bileşenler detaylı şekilde kontrol edilir. Aşınmış veya arızalı tüm parçalar orijinal veya eşdeğer kalitede yenileriyle değiştirilir.',
+      'Revizyon sonrası turbo, özel test cihazlarımızda balans ayarı yapılır ve performans testlerinden geçirilir. Bu sayede turbonuz yeni bir turbo kadar verimli çalışır ve uzun ömürlü olur.'
+    ]}
+    features={[
+      'Yeniden üretim kalitesinde revizyon',
+      'Tüm marka turbo revizyonu',
+      'Orijinal yedek parça kullanımı',
+      'Profesyonel balans ayarı',
+      'Detaylı performans testi',
+      'Yazılı garanti (6 ay veya daha fazla)',
+      'Yeni turbo performansı',
+      'Uygun fiyat avantajı'
+    ]}
+    process={[
+      {
+        step: 'Detaylı İnceleme',
+        description: 'Turbo tamamen sökülür ve her bileşen detaylı şekilde incelenir. Arızalı ve aşınmış parçalar tespit edilir.'
+      },
+      {
+        step: 'Parça Değişimi',
+        description: 'Tüm aşınmış ve arızalı parçalar orijinal kalitede yenileriyle değiştirilir. Özel parçalar gerekirse imal edilir.'
+      },
+      {
+        step: 'Balans ve Montaj',
+        description: 'Yeni parçalarla monte edilen turbo, özel balans cihazında ayarlanır ve optimum dengeye getirilir.'
+      },
+      {
+        step: 'Test ve Teslimat',
+        description: 'Revizyonlu turbo, performans testlerinden geçirilir. Tüm testleri başarıyla geçen turbo garantili olarak teslim edilir.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+
+

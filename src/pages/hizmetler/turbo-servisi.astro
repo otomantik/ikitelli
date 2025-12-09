@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-servisi-hero.jpg';
+
+const pageTitle = 'Turbo Servisi | İkitelli Turbocu | Sökme-Takma, Balans, Test Hizmeti';
+const pageDescription = 'İkitelli\'de profesyonel turbo servis hizmeti. Turbo sökme-takma, balans ayarı, performans testi. Araçtan sökmeden ön kontrol. Hızlı ve garantili servis.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-servisi';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Servisi"
+    subtitle="Profesyonel Turbo Sökme-Takma, Balans ve Test Hizmeti"
+    imageAlt="Turbo servis işlemi"
+  />
+
+  <ServiceDetail
+    title="Turbo Servisi"
+    content={[
+      'Turbo sisteminizde sorun mu var? İkitelli Turbocu olarak, kapsamlı turbo servis hizmeti sunuyoruz. Turbo sökme-takma, balans ayarı, performans testi ve bakım işlemlerini profesyonel ekibimizle gerçekleştiriyoruz.',
+      'Araçtan sökmeden önce, modern diagnostik cihazlarla ön kontrol yapıyoruz. Bu sayede gereksiz sökme işlemlerinden kaçınıyoruz. Eğer turbo sökülmesi gerekiyorsa, deneyimli teknisyenlerimiz tarafından hassas şekilde sökülür ve işlemler gerçekleştirilir.',
+      'Turbo servisi sonrası, balans ayarı yapılır ve performans testlerinden geçirilir. Tüm işlemler garantili olarak tamamlanır ve araçlarınız güvenle teslim edilir.'
+    ]}
+    features={[
+      'Profesyonel turbo sökme-takma',
+      'Araçtan sökmeden ön kontrol',
+      'Bilgisayarlı arıza tespiti',
+      'Balans ayarı ve kalibrasyon',
+      'Performans testi',
+      'Bakım ve kontroller',
+      'Hızlı servis süresi',
+      'Garantili işçilik'
+    ]}
+    process={[
+      {
+        step: 'Ön Kontrol',
+        description: 'Araç üzerinde bilgisayarlı test yapılır. Turbo durumu değerlendirilir ve gerekli işlemler belirlenir.'
+      },
+      {
+        step: 'Sökme İşlemi',
+        description: 'Gerekirse turbo, deneyimli teknisyenler tarafından hassas şekilde araçtan sökülür. Çevre parçalara zarar verilmez.'
+      },
+      {
+        step: 'Servis İşlemleri',
+        description: 'Turbo üzerinde gerekli servis işlemleri (balans, test, bakım) gerçekleştirilir. Tüm kontroller yapılır.'
+      },
+      {
+        step: 'Montaj ve Test',
+        description: 'Servisi yapılan turbo tekrar monte edilir. Final testleri yapılır ve araç güvenle teslim edilir.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+
+

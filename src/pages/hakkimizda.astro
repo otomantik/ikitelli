@@ -1,0 +1,216 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CarBrandsCarousel from '../components/CarBrandsCarousel.astro';
+
+const pageTitle = 'Hakkımızda | İkitelli Turbocu | Turbo Servisi Hikayemiz';
+const pageDescription = 'İkitelli Turbocu olarak yılların deneyimi ile turbo tamiri, revizyon ve satış hizmeti sunuyoruz. Profesyonel ekibimiz, modern ekipmanlarımız ve kaliteli hizmet anlayışımızla yanınızdayız.';
+const canonical = 'https://ikitelliturbocu.com/hakkimizda';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:locale" content="tr_TR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://ikitelliturbocu.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hakkımızda",
+          "item": canonical
+        }
+      ]
+    })} />
+    
+    <!-- AboutPage Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "name": "Hakkımızda",
+      "description": pageDescription,
+      "url": canonical,
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "İkitelli Turbocu",
+        "url": "https://ikitelliturbocu.com",
+        "telephone": "+905326584722"
+      }
+    })} />
+  </head>
+
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-gradient-to-br from-dark via-dark-light to-dark">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6 text-white">
+          Hakkımızda
+        </h1>
+        <p class="text-xl text-gray-300">
+          İkitelli'de turbo servisinde öncü, müşteri memnuniyetinde öncelikli
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <CarBrandsCarousel />
+
+  <!-- About Content -->
+  <section class="py-20">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto space-y-12">
+        <!-- Mission -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white">
+            Misyonumuz
+          </h2>
+          <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+            <p>
+              İkitelli Turbocu olarak, turbo sistemlerinde yaşanan her türlü sorunu profesyonel yaklaşım ve kaliteli işçilikle çözmeyi hedefliyoruz. Müşterilerimize güvenilir, hızlı ve uygun fiyatlı turbo hizmetleri sunarak, araçlarının optimum performansla çalışmasını sağlıyoruz.
+            </p>
+            <p>
+              Deneyimli ekibimiz, modern ekipmanlarımız ve orijinal yedek parça kullanımımızla, turbo tamiri ve revizyon konusunda İstanbul'un en güvenilir adresiyiz.
+            </p>
+          </div>
+        </div>
+
+        <!-- Vision -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white">
+            Vizyonumuz
+          </h2>
+          <div class="text-gray-300 text-lg leading-relaxed space-y-4">
+            <p>
+              Turbo servis sektöründe öncü olmak, müşteri memnuniyetini en üst seviyede tutmak ve her geçen gün kendimizi geliştirerek, teknolojinin tüm imkanlarından faydalanarak hizmet kalitemizi artırmak vizyonumuzdur.
+            </p>
+            <p>
+              İkitelli ve çevresindeki tüm bölgelere hızlı, güvenilir ve kaliteli turbo hizmetleri sunarak, sektördeki lider konumumuzu korumayı ve güçlendirmeyi amaçlıyoruz.
+            </p>
+          </div>
+        </div>
+
+        <!-- Values -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white">
+            Değerlerimiz
+          </h2>
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-dark-light p-6 rounded-lg border border-dark-lighter">
+              <h3 class="text-xl font-semibold mb-3 text-primary">🔧 Kalite</h3>
+              <p class="text-gray-300">
+                Tüm işlemlerimizde en yüksek kalite standartlarını uyguluyoruz. Orijinal yedek parça kullanımı ve profesyonel işçilik temel prensibimizdir.
+              </p>
+            </div>
+            <div class="bg-dark-light p-6 rounded-lg border border-dark-lighter">
+              <h3 class="text-xl font-semibold mb-3 text-primary">⚡ Hız</h3>
+              <p class="text-gray-300">
+                Acil durumlarda aynı gün teslim imkanı sunuyoruz. Hızlı arıza tespiti ve çözüm süreçleri ile zaman kaybınızı önlüyoruz.
+              </p>
+            </div>
+            <div class="bg-dark-light p-6 rounded-lg border border-dark-lighter">
+              <h3 class="text-xl font-semibold mb-3 text-primary">✅ Güven</h3>
+              <p class="text-gray-300">
+                Tüm hizmetlerimizde yazılı garanti sunuyoruz. Şeffaf fiyatlandırma ve dürüst yaklaşımımız ile müşteri güvenini kazanıyoruz.
+              </p>
+            </div>
+            <div class="bg-dark-light p-6 rounded-lg border border-dark-lighter">
+              <h3 class="text-xl font-semibold mb-3 text-primary">💡 Uzmanlık</h3>
+              <p class="text-gray-300">
+                Yılların deneyimi ve sürekli eğitim alan ekibimiz ile turbo konusunda uzman hizmet sunuyoruz.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Why Us -->
+        <div>
+          <h2 class="text-3xl font-bold mb-6 text-white">
+            Neden Bizi Tercih Etmelisiniz?
+          </h2>
+          <div class="space-y-4 text-gray-300">
+            <div class="flex items-start gap-4 bg-dark-light p-4 rounded-lg border border-dark-lighter">
+              <span class="text-primary text-2xl flex-shrink-0">✓</span>
+              <div>
+                <h4 class="font-semibold text-white mb-1">Yılların Deneyimi</h4>
+                <p>Turbo servis sektöründe uzun yıllardır hizmet veriyoruz. Binlerce başarılı tamir ve revizyon deneyimimiz var.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-dark-light p-4 rounded-lg border border-dark-lighter">
+              <span class="text-primary text-2xl flex-shrink-0">✓</span>
+              <div>
+                <h4 class="font-semibold text-white mb-1">Modern Ekipmanlar</h4>
+                <p>Bilgisayarlı test cihazları ve modern teknolojik ekipmanlarla en doğru sonuçları elde ediyoruz.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-dark-light p-4 rounded-lg border border-dark-lighter">
+              <span class="text-primary text-2xl flex-shrink-0">✓</span>
+              <div>
+                <h4 class="font-semibold text-white mb-1">Orijinal Yedek Parça</h4>
+                <p>Orijinal veya eşdeğer kalitede yedek parça kullanarak, turbo ömrünü ve performansını garantiliyoruz.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-dark-light p-4 rounded-lg border border-dark-lighter">
+              <span class="text-primary text-2xl flex-shrink-0">✓</span>
+              <div>
+                <h4 class="font-semibold text-white mb-1">Uygun Fiyat</h4>
+                <p>Kaliteli hizmeti uygun fiyatlarla sunuyoruz. Şeffaf fiyatlandırma ile gizli maliyet yok.</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 bg-dark-light p-4 rounded-lg border border-dark-lighter">
+              <span class="text-primary text-2xl flex-shrink-0">✓</span>
+              <div>
+                <h4 class="font-semibold text-white mb-1">Garantili Hizmet</h4>
+                <p>Tüm işlemlerimizde yazılı garanti sunuyoruz. Müşteri memnuniyeti bizim için önceliktir.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="bg-primary/10 border border-primary rounded-lg p-8 text-center">
+          <h3 class="text-2xl font-bold mb-4 text-white">Bize Ulaşın</h3>
+          <p class="text-gray-300 mb-6">
+            Turbo ihtiyaçlarınız için profesyonel çözümler sunmak için buradayız. Hemen iletişime geçin.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href="tel:+905326584722"
+              class="bg-primary text-dark px-8 py-4 rounded-md font-bold text-lg hover:bg-primary-dark transition-colors"
+            >
+              📞 Hemen Ara
+            </a>
+            <a
+              href="/iletisim"
+              class="bg-dark-light text-white px-8 py-4 rounded-md font-bold text-lg hover:bg-dark-lighter transition-colors border border-dark-lighter"
+            >
+              İletişim Sayfası
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+

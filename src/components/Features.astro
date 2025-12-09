@@ -1,0 +1,46 @@
+---
+const features = [
+  {
+    icon: '🔍',
+    title: 'Ücretsiz Arıza Tespiti',
+    description: 'Modern ekipmanlarla turbo arızasını hızlı ve doğru şekilde tespit ediyoruz. İlk kontrol tamamen ücretsizdir.',
+  },
+  {
+    icon: '✅',
+    title: 'Garantili Revizyon',
+    description: 'Tüm revizyon işlemlerimizde yazılı garanti sunuyoruz. Kalite ve güven için garantili hizmet.',
+  },
+  {
+    icon: '💻',
+    title: 'Bilgisayarlı Test ve Analiz',
+    description: 'Güncel teknoloji ile bilgisayarlı test ve analiz yapıyoruz. Detaylı raporlama ve şeffaf süreç.',
+  },
+  {
+    icon: '⚡',
+    title: 'Orijinal Parça ve Hızlı Servis',
+    description: 'Orijinal veya eşdeğer kalitede yedek parça kullanımı. Acil durumlarda aynı gün teslim imkânı.',
+  },
+];
+---
+
+<section id="neden-biz" class="py-20">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
+      Neden <span class="text-primary">İkitelli Turbocu</span>?
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
+      Yılların deneyimi ve uzman ekibimizle turbo ihtiyaçlarınıza en iyi çözümü sunuyoruz.
+    </p>
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      {features.map((feature) => (
+        <div class="bg-dark-light p-6 rounded-md border border-dark-lighter hover:border-primary transition-colors">
+          <div class="text-5xl mb-4 text-center">{feature.icon}</div>
+          <h3 class="text-xl font-semibold mb-3 text-white text-center">{feature.title}</h3>
+          <p class="text-gray-400 text-center leading-relaxed text-sm">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+

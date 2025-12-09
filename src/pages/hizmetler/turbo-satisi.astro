@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-satisi-hero.jpg';
+
+const pageTitle = 'Turbo Satışı | İkitelli Turbocu | Yeni ve Revizyonlu Turbo Satışı';
+const pageDescription = 'İkitelli\'de yeni ve revizyonlu turbo satışı. Tüm markalar için orijinal ve eşdeğer turbo temini. Uygun fiyat garantisi. Hızlı teslimat. Garantili turbo satışı.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-satisi';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Satışı"
+    subtitle="Yeni ve Revizyonlu Turbo Satışı - Tüm Markalar"
+    imageAlt="Yeni turbo satışı"
+  />
+
+  <ServiceDetail
+    title="Turbo Satışı"
+    content={[
+      'İkitelli Turbocu olarak, tüm marka ve model araçlar için yeni ve revizyonlu turbo satışı yapıyoruz. Orijinal turbo ihtiyacınız varsa veya bütçenize uygun revizyonlu turbo arıyorsanız, size en uygun seçeneği sunuyoruz.',
+      'Stoklarımızda geniş bir yelpazede turbo çeşitleri bulunmaktadır. Eğer ihtiyacınız olan turbo stoklarımızda yoksa, hızlı temin hizmeti sunuyoruz. Orijinal turbo, eşdeğer kalitede turbo veya yeniden üretilmiş revizyonlu turbo seçeneklerinden size en uygun olanını öneriyoruz.',
+      'Tüm turbo satışlarımızda yazılı garanti sunuyoruz. Satın aldığınız turbonun montajı için de profesyonel sökme-takma hizmeti sunuyoruz.'
+    ]}
+    features={[
+      'Yeni orijinal turbo satışı',
+      'Revizyonlu turbo satışı (uygun fiyat)',
+      'Tüm marka turbo temini (Garrett, BorgWarner, Holset, IHI, Mitsubishi, vb.)',
+      'Eşdeğer kalitede turbo seçenekleri',
+      'Hızlı temin hizmeti',
+      'Yazılı garanti',
+      'Uygun fiyat garantisi',
+      'Profesyonel montaj hizmeti'
+    ]}
+    process={[
+      {
+        step: 'İhtiyaç Tespiti',
+        description: 'Araç bilgileriniz ve turbo özellikleri belirlenir. İhtiyacınıza uygun turbo seçenekleri sunulur.'
+      },
+      {
+        step: 'Turbo Seçimi',
+        description: 'Yeni orijinal, revizyonlu veya eşdeğer turbo seçenekleri arasından bütçenize ve ihtiyacınıza uygun olanı seçersiniz.'
+      },
+      {
+        step: 'Temin ve Kontrol',
+        description: 'Seçtiğiniz turbo temin edilir veya stoktan hazırlanır. Detaylı kontrol ve test yapılır.'
+      },
+      {
+        step: 'Teslimat ve Montaj',
+        description: 'Turbo garantili olarak teslim edilir. İsterseniz profesyonel montaj hizmeti de sunulur.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+
+

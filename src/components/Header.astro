@@ -1,0 +1,350 @@
+---
+import Logo from './Logo.tsx';
+---
+
+<header class="sticky top-0 z-[9999] bg-dark/98 border-b border-dark-lighter shadow-lg">
+  <nav class="container mx-auto px-4 py-4" aria-label="Ana navigasyon">
+    <div class="flex items-center justify-between">
+      <a href="/" aria-label="Ana sayfa" class="focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-dark rounded-md">
+        <Logo />
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-6">
+        <a 
+          href="/" 
+          class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-dark-light font-medium relative group"
+        >
+          Anasayfa
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        
+        <!-- Hizmetler Dropdown -->
+        <div class="relative group z-[10000]">
+          <a 
+            href="/hizmetler" 
+            class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-dark-light font-medium relative inline-flex items-center gap-1"
+          >
+            Hizmetler
+            <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+            <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+          </a>
+          <!-- Dropdown Menu -->
+          <div class="absolute z-[10001] top-full left-0 mt-2 w-64 bg-dark-light border border-dark-lighter rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+            <div class="py-2">
+              <a href="/hizmetler/turbo-tamiri" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                ⚙️ Turbo Tamiri
+              </a>
+              <a href="/hizmetler/turbo-revizyonu" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                🔧 Turbo Revizyonu
+              </a>
+              <a href="/hizmetler/turbo-ariza-tespiti" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                🔍 Turbo Arıza Tespiti
+              </a>
+              <a href="/hizmetler/turbo-temizligi" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                ✨ Turbo Temizliği
+              </a>
+              <a href="/hizmetler/turbo-satisi" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                🛒 Turbo Satışı
+              </a>
+              <a href="/hizmetler/turbo-servisi" class="block px-4 py-2 text-gray-300 hover:text-primary hover:bg-dark transition-colors text-sm">
+                🛠️ Turbo Servisi
+              </a>
+              <div class="border-t border-dark-lighter mt-2 pt-2">
+                <a href="/hizmetler" class="block px-4 py-2 text-primary hover:bg-dark transition-colors text-sm font-semibold">
+                  Tüm Hizmetler →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <a 
+          href="/hakkimizda" 
+          class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-dark-light font-medium relative group"
+        >
+          Hakkımızda
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a 
+          href="/sss" 
+          class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-dark-light font-medium relative group"
+        >
+          SSS
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a 
+          href="/iletisim" 
+          class="text-gray-300 hover:text-primary transition-colors px-3 py-2 rounded-md hover:bg-dark-light font-medium relative group"
+        >
+          İletişim
+          <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <div class="flex items-center gap-2 ml-4 pl-4 border-l border-dark-lighter">
+          <a
+            href="tel:+905326584722"
+            class="inline-flex items-center justify-center gap-1.5 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 hover:border-primary/50 px-3 py-1.5 rounded-md font-medium transition-all duration-200 text-sm"
+            aria-label="Telefon ile ara"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>Ara</span>
+          </a>
+          <a
+            href="https://wa.me/905326584722"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-1.5 bg-whatsapp/10 hover:bg-whatsapp/20 text-whatsapp border border-whatsapp/30 hover:border-whatsapp/50 px-3 py-1.5 rounded-md font-medium transition-all duration-200 text-sm"
+            aria-label="WhatsApp ile iletişime geç"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-button"
+        class="lg:hidden text-white p-2 relative z-50 transition-transform duration-300"
+        aria-label="Menüyü aç"
+        aria-expanded="false"
+        type="button"
+      >
+        <!-- Hamburger Icon -->
+        <svg id="hamburger-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6 transition-opacity duration-300">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon -->
+        <svg id="close-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-6 h-6 absolute inset-0 m-auto opacity-0 transition-opacity duration-300">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu Backdrop -->
+    <div 
+      id="mobile-menu-backdrop" 
+      class="hidden lg:hidden fixed inset-0 bg-black/60 z-[9998] transition-opacity duration-300"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Mobile Menu -->
+    <div 
+      id="mobile-menu" 
+      class="hidden lg:hidden relative z-[10000] mt-4 pb-4 border-t border-dark-lighter pt-4 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 bg-dark"
+    >
+      <div class="flex flex-col gap-4">
+        <a 
+          href="/" 
+          class="text-gray-300 hover:text-primary transition-colors py-2 px-2 rounded-md hover:bg-dark-light"
+          data-menu-link
+        >
+          Anasayfa
+        </a>
+        <a 
+          href="/hizmetler" 
+          class="text-gray-300 hover:text-primary transition-colors py-2 px-2 rounded-md hover:bg-dark-light font-semibold"
+          data-menu-link
+        >
+          Hizmetler
+        </a>
+        <div class="pl-4 flex flex-col gap-2 border-l-2 border-dark-lighter">
+          <a 
+            href="/hizmetler/turbo-tamiri" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            ⚙️ Turbo Tamiri
+          </a>
+          <a 
+            href="/hizmetler/turbo-revizyonu" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            🔧 Turbo Revizyonu
+          </a>
+          <a 
+            href="/hizmetler/turbo-ariza-tespiti" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            🔍 Turbo Arıza Tespiti
+          </a>
+          <a 
+            href="/hizmetler/turbo-temizligi" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            ✨ Turbo Temizliği
+          </a>
+          <a 
+            href="/hizmetler/turbo-satisi" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            🛒 Turbo Satışı
+          </a>
+          <a 
+            href="/hizmetler/turbo-servisi" 
+            class="text-gray-400 hover:text-primary transition-colors py-1 px-2 rounded-md hover:bg-dark-light text-sm"
+            data-menu-link
+          >
+            🛠️ Turbo Servisi
+          </a>
+        </div>
+        <a 
+          href="/hakkimizda" 
+          class="text-gray-300 hover:text-primary transition-colors py-2 px-2 rounded-md hover:bg-dark-light"
+          data-menu-link
+        >
+          Hakkımızda
+        </a>
+        <a 
+          href="/sss" 
+          class="text-gray-300 hover:text-primary transition-colors py-2 px-2 rounded-md hover:bg-dark-light"
+          data-menu-link
+        >
+          Sıkça Sorulan Sorular
+        </a>
+        <a 
+          href="/iletisim" 
+          class="text-gray-300 hover:text-primary transition-colors py-2 px-2 rounded-md hover:bg-dark-light"
+          data-menu-link
+        >
+          İletişim
+        </a>
+        <div class="flex gap-2.5 pt-4 border-t border-dark-lighter mt-4">
+          <a
+            href="tel:+905326584722"
+            class="inline-flex items-center justify-center gap-2 bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 hover:border-primary/50 px-3 py-2 rounded-md font-medium transition-all duration-200 text-sm flex-1"
+            data-menu-link
+            aria-label="Telefon ile ara"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+            </svg>
+            <span>Ara</span>
+          </a>
+          <a
+            href="https://wa.me/905326584722"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center gap-2 bg-whatsapp/10 hover:bg-whatsapp/20 text-whatsapp border border-whatsapp/30 hover:border-whatsapp/50 px-3 py-2 rounded-md font-medium transition-all duration-200 text-sm flex-1"
+            data-menu-link
+            aria-label="WhatsApp ile iletişime geç"
+          >
+            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+            </svg>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script is:inline>
+  // Optimized mobile menu script - inline for immediate execution
+  (function() {
+    'use strict';
+    const menuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const backdrop = document.getElementById('mobile-menu-backdrop');
+    const hamburgerIcon = document.getElementById('hamburger-icon');
+    const closeIcon = document.getElementById('close-icon');
+    const menuLinks = document.querySelectorAll('[data-menu-link]');
+
+    if (!menuButton || !mobileMenu || !backdrop) return;
+
+    function openMenu() {
+      menuButton.setAttribute('aria-expanded', 'true');
+      mobileMenu.classList.remove('hidden');
+      backdrop.classList.remove('hidden');
+      // Trigger animation
+      requestAnimationFrame(() => {
+        mobileMenu.classList.remove('opacity-0', '-translate-y-4');
+        mobileMenu.classList.add('opacity-100', 'translate-y-0');
+        backdrop.classList.remove('opacity-0');
+        backdrop.classList.add('opacity-100');
+        if (hamburgerIcon) hamburgerIcon.classList.add('opacity-0');
+        if (closeIcon) {
+          closeIcon.classList.remove('opacity-0');
+          closeIcon.classList.add('opacity-100');
+        }
+      });
+      // Prevent body scroll
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      // Trigger animation
+      mobileMenu.classList.add('opacity-0', '-translate-y-4');
+      mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+      backdrop.classList.add('opacity-0');
+      backdrop.classList.remove('opacity-100');
+      if (hamburgerIcon) {
+        hamburgerIcon.classList.remove('opacity-0');
+        hamburgerIcon.classList.add('opacity-100');
+      }
+      if (closeIcon) {
+        closeIcon.classList.add('opacity-0');
+        closeIcon.classList.remove('opacity-100');
+      }
+      // Hide after animation
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        backdrop.classList.add('hidden');
+      }, 300);
+      // Restore body scroll
+      document.body.style.overflow = '';
+    }
+
+    function toggleMenu() {
+      const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    }
+
+    // Event listeners with passive where possible
+    menuButton.addEventListener('click', toggleMenu, { passive: true });
+    backdrop.addEventListener('click', closeMenu, { passive: true });
+
+    // Close menu when clicking on a link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        // Small delay for hash links to work properly
+        setTimeout(closeMenu, 100);
+      }, { passive: true });
+    });
+
+    // Close menu on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+      }
+    }, { passive: true });
+
+    // Debounced resize handler
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        if (window.innerWidth >= 1024 && menuButton.getAttribute('aria-expanded') === 'true') {
+          closeMenu();
+        }
+      }, 150);
+    }, { passive: true });
+  })();
+</script>
+

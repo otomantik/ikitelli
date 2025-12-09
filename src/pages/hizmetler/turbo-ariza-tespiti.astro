@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ServiceHero from '../../components/ServiceHero.astro';
+import ServiceDetail from '../../components/ServiceDetail.astro';
+import Contact from '../../components/Contact.astro';
+// import heroImage from '../../assets/hizmetler/turbo-ariza-tespiti-hero.jpg';
+
+const pageTitle = 'Turbo Arıza Tespiti | İkitelli Turbocu | Ücretsiz Bilgisayarlı Arıza Tespiti';
+const pageDescription = 'İkitelli\'de ücretsiz turbo arıza tespiti hizmeti. Bilgisayarlı test cihazları ile hızlı ve doğru arıza tespiti. Profesyonel analiz ve şeffaf raporlama.';
+const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-ariza-tespiti';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+  </head>
+
+  <ServiceHero
+    title="Turbo Arıza Tespiti"
+    subtitle="Ücretsiz Bilgisayarlı Arıza Tespiti ve Analiz Hizmeti"
+    imageAlt="Turbo arıza tespiti işlemi"
+  />
+
+  <ServiceDetail
+    title="Turbo Arıza Tespiti"
+    content={[
+      'Turbo sisteminizde sorun mu yaşıyorsunuz? İkitelli Turbocu olarak, modern bilgisayarlı test cihazlarımızla turbo arızalarınızı hızlı ve doğru şekilde tespit ediyoruz. İlk kontrol tamamen ücretsizdir.',
+      'Arıza tespiti işlemimiz, araç üzerinde veya sökülmüş turbo üzerinde yapılabilir. Modern diagnostik ekipmanlarımız sayesinde turbo sistemindeki en küçük arıza bile tespit edilir ve detaylı analiz raporu hazırlanır.',
+      'Tespit sonrası, arızanın tam olarak ne olduğu, hangi parçalarda sorun bulunduğu ve gerekli tamir/revizyon maliyeti hakkında şeffaf bilgi veriyoruz. Zorunlu bir işlem yaptırmazsınız, sadece bilgi alabilirsiniz.'
+    ]}
+    features={[
+      'Ücretsiz ön kontrol ve arıza tespiti',
+      'Bilgisayarlı diagnostik cihazlar',
+      'Araç üzerinde veya sökülmüş turbo üzerinde test',
+      'Detaylı analiz raporu',
+      'Şeffaf fiyat teklifi',
+      'Hızlı sonuç (15-30 dakika)',
+      'Zorunlu işlem yok, sadece bilgilendirme',
+      'Deneyimli teknisyen ekibi'
+    ]}
+    process={[
+      {
+        step: 'İlk Kontrol',
+        description: 'Araç üzerinde veya sökülmüş turbo üzerinde görsel ve basit test kontrolleri yapılır. Genel durum değerlendirilir.'
+      },
+      {
+        step: 'Bilgisayarlı Test',
+        description: 'Modern diagnostik cihazlarla detaylı test yapılır. Basınç, sıcaklık, devir ve diğer parametreler ölçülür.'
+      },
+      {
+        step: 'Analiz ve Rapor',
+        description: 'Test sonuçları analiz edilir ve arızanın tam konumu belirlenir. Detaylı rapor hazırlanır.'
+      },
+      {
+        step: 'Bilgilendirme',
+        description: 'Arıza hakkında detaylı bilgi verilir. Gerekli tamir/revizyon işlemleri ve maliyetleri açıklanır.'
+      }
+    ]}
+  />
+
+  <Contact />
+</BaseLayout>
+
+

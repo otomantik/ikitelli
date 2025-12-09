@@ -1,0 +1,167 @@
+---
+/**
+ * İkitelli Turbocu - Ana Sayfa
+ * 
+ * DEVELOPMENT:
+ * npm install
+ * npm run dev
+ * 
+ * PRODUCTION BUILD:
+ * npm run build
+ * 
+ * CLOUDFLARE DEPLOYMENT:
+ * 1. Connect repository to Cloudflare Pages
+ * 2. Build command: npm run build
+ * 3. Build output: dist/
+ * 4. Environment variables: Set PUBLIC_GTM_ID if needed
+ */
+
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
+import Features from '../components/Features.astro';
+import CarBrandsCarousel from '../components/CarBrandsCarousel.astro';
+import Process from '../components/Process.astro';
+import Testimonials from '../components/Testimonials.astro';
+import FAQ from '../components/FAQ.tsx';
+import Contact from '../components/Contact.astro';
+
+const pageTitle = 'İkitelli Turbocu | Turbo Tamiri, Turbo Revizyon, Turbo Satış İstanbul';
+const pageDescription = 'İkitelli\'de profesyonel turbo tamiri, turbo revizyon ve turbo satış hizmeti. Bilgisayarlı arıza tespiti, garantili işçilik, aynı gün teslim. Tüm marka turbo için uzman servis. Ücretsiz arıza tespiti. Hemen arayın: +90 532 658 47 22';
+const canonical = 'https://ikitelliturbocu.com/';
+const ogImage = 'https://ikitelliturbocu.com/images/og-image.jpg';
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+  <head>
+    <title>{pageTitle}</title>
+    <meta name="description" content={pageDescription} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:site_name" content="İkitelli Turbocu" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonical} />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Structured Data - LocalBusiness / AutoRepair -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AutoRepair",
+      "name": "İkitelli Turbocu",
+      "alternateName": "İkitelli Turbo Servisi",
+      "image": ogImage,
+      "description": pageDescription,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Güngören-Bağcılar Sanayi Sitesi 15. Blok No: 13",
+        "addressLocality": "Başakşehir",
+        "addressRegion": "İstanbul",
+        "postalCode": "",
+        "addressCountry": "TR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "41.0783",
+        "longitude": "28.7833"
+      },
+      "telephone": "+905326584722",
+      "url": canonical,
+      "priceRange": "$$",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "09:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "17:00"
+        }
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "İstanbul"
+      },
+      "serviceType": [
+        "Turbo Tamiri",
+        "Turbo Revizyonu",
+        "Turbo Satışı",
+        "Turbo Servisi",
+        "Turbo Temizliği",
+        "Turbo Arıza Tespiti"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Turbo Servis Hizmetleri",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Turbo Tamiri",
+              "description": "Profesyonel turbo tamiri hizmeti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Turbo Revizyonu",
+              "description": "Turbo revizyon ve bakım hizmeti"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Turbo Satışı",
+              "description": "Orijinal ve kaliteli turbo satışı"
+            }
+          }
+        ]
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "reviewCount": "150"
+      }
+    })} />
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": canonical
+        }
+      ]
+    })} />
+  </head>
+
+  <Hero />
+  <CarBrandsCarousel />
+  <Services />
+  <Features />
+  <Process />
+  <Testimonials />
+  <FAQ client:visible />
+  <Contact />
+</BaseLayout>
