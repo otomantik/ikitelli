@@ -22,9 +22,9 @@ import { Image } from 'astro:assets';
   </div>
 
   <div class="container mx-auto px-4 pt-16 pb-8 md:pt-12 md:pb-12 lg:pt-20 lg:pb-20 relative">
-    <div class="grid lg:grid-cols-2 gap-12 items-center">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
       <!-- Left: Headline and CTA -->
-      <div class="text-center lg:text-left">
+      <div class="text-center lg:text-left order-2 lg:order-1">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
           Turbo Tamir + <span class="text-primary">Revizyon</span> Merkezi
         </h1>
@@ -35,7 +35,8 @@ import { Image } from 'astro:assets';
           İkitelli'de aynı gün turbo tamiri ve revizyon hizmeti. Bilgisayarlı arıza tespiti, 
           garantili işçilik, orijinal yedek parça. Her marka turbo için uzman servis.
         </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <!-- Butonlar sadece desktop'ta görünsün, mobilde sticky butonlar var -->
+        <div class="hidden md:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
           <a
             href="tel:+905326584722"
             class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-dark transition-all duration-200 text-center shadow-xl hover:shadow-2xl active:scale-95 flex items-center justify-center gap-2"
@@ -61,8 +62,8 @@ import { Image } from 'astro:assets';
         </div>
       </div>
 
-      <!-- Right: Hero Video -->
-      <div class="relative rounded-lg overflow-hidden shadow-2xl">
+      <!-- Right: Hero Video - Mobilde üstte, desktop'ta sağda -->
+      <div class="relative rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2 -mx-4 md:mx-0">
         <div class="aspect-video bg-dark-lighter relative">
           <video
             class="absolute inset-0 w-full h-full object-cover"
