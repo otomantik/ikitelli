@@ -30,15 +30,15 @@ const { title, subtitle, imageSrc, imageAlt } = Astro.props;
     <div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
   </div>
 
-  <div class="container mx-auto px-4 py-20 relative">
+  <div class="container mx-auto px-4 pt-0 pb-8 md:py-20 relative">
     <div class="max-w-4xl mx-auto text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-white">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
         {title}
       </h1>
-      <p class="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+      <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-6 md:mb-8 leading-relaxed">
         {subtitle}
       </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <div class="hidden md:flex flex-col sm:flex-row gap-4 justify-center">
         <a
           href="tel:+905326584722"
           class="bg-primary text-dark px-8 py-4 rounded-md font-bold text-lg hover:bg-primary-dark transition-colors text-center shadow-lg"

@@ -48,7 +48,7 @@ const FAQ = memo(function FAQ() {
   };
 
   return (
-    <section id="sss" className="py-20 bg-dark-light">
+    <section id="sss" className="py-12 md:py-20 bg-dark-light">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl md:text-4xl font-bold text-center mb-4 text-white">
           Sıkça Sorulan <span className="text-primary">Sorular</span>
