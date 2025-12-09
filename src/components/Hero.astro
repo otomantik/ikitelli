@@ -5,56 +5,48 @@ import { Image } from 'astro:assets';
 // import heroBg from '../assets/hero/hero-bg.jpg';
 ---
 
-<section id="anasayfa" class="relative min-h-[90vh] md:min-h-[90vh] flex items-start md:items-center overflow-hidden z-0">
-  <!-- Background with vignette effect -->
-  <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
-    <!-- Background image will be here when added -->
-    <!-- <Image
-      src={heroBg}
-      alt=""
-      class="absolute inset-0 w-full h-full object-cover opacity-20"
-      loading="eager"
-      quality={60}
-      aria-hidden="true"
-    /> -->
+<section id="anasayfa" class="relative overflow-hidden z-0">
+  <!-- Video - Mobilde header'ın hemen altında, tam genişlik -->
+  <div class="w-full md:hidden">
+    <div class="aspect-video bg-dark-lighter relative">
+      <video
+        class="absolute inset-0 w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="none"
+        loading="lazy"
+        aria-label="Turbo tamiri tanıtım videosu"
+      >
+        <source src="/images/hero-turbo.mp4" type="video/mp4" />
+      </video>
+    </div>
+  </div>
+
+  <!-- Background with vignette effect - Desktop için -->
+  <div class="hidden md:block absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
     <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
   </div>
 
-  <div class="container mx-auto px-0 md:px-4 pt-0 pb-8 md:pt-12 md:pb-12 lg:pt-20 lg:pb-20 relative">
-    <div class="grid lg:grid-cols-2 gap-0 md:gap-12 items-center">
-      <!-- Video - Mobilde üstte, tam genişlik -->
-      <div class="relative rounded-none md:rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2 w-full">
-        <div class="aspect-video bg-dark-lighter relative">
-          <video
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="none"
-            loading="lazy"
-            aria-label="Turbo tamiri tanıtım videosu"
-          >
-            <source src="/images/hero-turbo.mp4" type="video/mp4" />
-          </video>
-        </div>
-      </div>
-
-      <!-- Left: Headline and CTA -->
-      <div class="text-center lg:text-left order-2 lg:order-1 px-4 pt-6 md:pt-0">
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
+  <!-- Content Container -->
+  <div class="container mx-auto px-4 py-8 md:py-12 lg:py-20 relative">
+    <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+      <!-- Text Content -->
+      <div class="text-center lg:text-left">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
           Turbo Tamir + <span class="text-primary">Revizyon</span> Merkezi
         </h1>
-        <p class="text-xl md:text-2xl text-gray-300 mb-4 md:mb-8 leading-relaxed">
+        <p class="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 md:mb-8 leading-relaxed">
           Profesyonel Turbo Tamiri | Ücretsiz Arıza Tespiti
         </p>
-        <p class="text-lg text-gray-400 mb-6 md:mb-10 leading-relaxed">
+        <p class="text-base sm:text-lg text-gray-400 mb-6 md:mb-10 leading-relaxed">
           İkitelli'de aynı gün turbo tamiri ve revizyon hizmeti. Bilgisayarlı arıza tespiti, 
           garantili işçilik, orijinal yedek parça. Her marka turbo için uzman servis.
         </p>
         <!-- Butonlar sadece desktop'ta görünsün, mobilde sticky butonlar var -->
-        <div class="hidden md:flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+        <div class="hidden md:flex gap-4 justify-center lg:justify-start">
           <a
             href="tel:+905326584722"
             class="bg-primary text-dark px-8 py-4 rounded-lg font-bold text-lg hover:bg-primary-dark transition-all duration-200 text-center shadow-xl hover:shadow-2xl active:scale-95 flex items-center justify-center gap-2"
@@ -77,6 +69,24 @@ import { Image } from 'astro:assets';
             </svg>
             <span>WhatsApp'tan Yaz</span>
           </a>
+        </div>
+      </div>
+
+      <!-- Video - Desktop'ta sağda -->
+      <div class="hidden md:block relative rounded-lg overflow-hidden shadow-2xl">
+        <div class="aspect-video bg-dark-lighter relative">
+          <video
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            loading="lazy"
+            aria-label="Turbo tamiri tanıtım videosu"
+          >
+            <source src="/images/hero-turbo.mp4" type="video/mp4" />
+          </video>
         </div>
       </div>
     </div>

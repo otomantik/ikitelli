@@ -75,7 +75,6 @@
   /* Performance optimizations */
   img {
     content-visibility: auto;
-    contain-intrinsic-size: 1px 1000px;
   }
 
   /* Layout */
@@ -102,10 +101,8 @@
   }
 
   /* Mobile menu performance */
-  header,
-  .mobile-menu,
-  .mobile-menu-backdrop {
-    will-change: transform, opacity;
+  header {
+    will-change: transform;
   }
 }
 
