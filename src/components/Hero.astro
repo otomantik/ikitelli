@@ -5,7 +5,7 @@ import { Image } from 'astro:assets';
 // import heroBg from '../assets/hero/hero-bg.jpg';
 ---
 
-<section id="anasayfa" class="relative min-h-[90vh] md:min-h-[90vh] flex items-start md:items-center overflow-hidden -mt-16 md:mt-0">
+<section id="anasayfa" class="relative min-h-[90vh] md:min-h-[90vh] flex items-start md:items-center overflow-hidden z-0">
   <!-- Background with vignette effect -->
   <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
     <!-- Background image will be here when added -->
@@ -21,10 +21,28 @@ import { Image } from 'astro:assets';
     <div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
   </div>
 
-  <div class="container mx-auto px-4 pt-16 pb-8 md:pt-12 md:pb-12 lg:pt-20 lg:pb-20 relative">
-    <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+  <div class="container mx-auto px-0 md:px-4 pt-0 pb-8 md:pt-12 md:pb-12 lg:pt-20 lg:pb-20 relative">
+    <div class="grid lg:grid-cols-2 gap-0 md:gap-12 items-center">
+      <!-- Video - Mobilde üstte, tam genişlik -->
+      <div class="relative rounded-none md:rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2 w-full">
+        <div class="aspect-video bg-dark-lighter relative">
+          <video
+            class="absolute inset-0 w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="none"
+            loading="lazy"
+            aria-label="Turbo tamiri tanıtım videosu"
+          >
+            <source src="/images/hero-turbo.mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
       <!-- Left: Headline and CTA -->
-      <div class="text-center lg:text-left order-2 lg:order-1">
+      <div class="text-center lg:text-left order-2 lg:order-1 px-4 pt-6 md:pt-0">
         <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
           Turbo Tamir + <span class="text-primary">Revizyon</span> Merkezi
         </h1>
@@ -59,24 +77,6 @@ import { Image } from 'astro:assets';
             </svg>
             <span>WhatsApp'tan Yaz</span>
           </a>
-        </div>
-      </div>
-
-      <!-- Right: Hero Video - Mobilde üstte, desktop'ta sağda -->
-      <div class="relative rounded-lg overflow-hidden shadow-2xl order-1 lg:order-2 -mx-4 md:mx-0">
-        <div class="aspect-video bg-dark-lighter relative">
-          <video
-            class="absolute inset-0 w-full h-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-            preload="none"
-            loading="lazy"
-            aria-label="Turbo tamiri tanıtım videosu"
-          >
-            <source src="/images/hero-turbo.mp4" type="video/mp4" />
-          </video>
         </div>
       </div>
     </div>
