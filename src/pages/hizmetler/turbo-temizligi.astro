@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import ServiceDetail from '../../components/ServiceDetail.astro';
-// import heroImage from '../../assets/hizmetler/turbo-temizligi-hero.jpg';
+import heroImage from '../../assets/hizmetler/turbo-temizligi-hero.jpg';
 
 const pageTitle = 'Turbo Temizliği | İkitelli Turbocu | Profesyonel Turbo Temizleme Hizmeti';
 const pageDescription = 'İkitelli\'de profesyonel turbo temizleme hizmeti. Karbon birikintisi ve kirlerin giderilmesi. Turbo performansını artırın, ömrünü uzatın. Uygun fiyat garantisi.';
@@ -19,6 +19,7 @@ const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-temizligi';
   <ServiceHero
     title="Turbo Temizliği"
     subtitle="Profesyonel Turbo Temizleme ve Bakım Hizmeti"
+    imageSrc={heroImage}
     imageAlt="Turbo temizlik işlemi"
   />
 

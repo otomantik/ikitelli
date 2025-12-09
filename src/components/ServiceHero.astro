@@ -11,9 +11,26 @@ interface Props {
 const { title, subtitle, imageSrc, imageAlt } = Astro.props;
 ---
 
-<section class="relative min-h-[70vh] flex items-center overflow-hidden">
-  <!-- Background with vignette effect -->
-  <div class="absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark">
+<section class="relative overflow-hidden z-0">
+  <!-- Hero Image - Mobilde header'ın hemen altında, tam genişlik -->
+  {imageSrc && (
+    <div class="w-full md:hidden">
+      <div class="aspect-video bg-dark-lighter relative">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          class="absolute inset-0 w-full h-full object-cover"
+          loading="eager"
+          quality={75}
+          aria-hidden="true"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/50 to-transparent"></div>
+      </div>
+    </div>
+  )}
+
+  <!-- Background with vignette effect - Desktop için -->
+  <div class="hidden md:flex md:items-center absolute inset-0 bg-gradient-to-br from-dark via-dark-light to-dark min-h-[70vh]">
     {imageSrc ? (
       <Image
         src={imageSrc}
@@ -30,6 +47,7 @@ const { title, subtitle, imageSrc, imageAlt } = Astro.props;
     <div class="absolute inset-0 bg-gradient-to-r from-dark/80 via-transparent to-dark/60"></div>
   </div>
 
+  <!-- Content Container -->
   <div class="container mx-auto px-4 pt-0 pb-8 md:py-20 relative">
     <div class="max-w-4xl mx-auto text-center">
       <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6 leading-tight text-white">
