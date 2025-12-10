@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 
-const baseUrl = 'https://ikitelliturbocu.com';
+const baseUrl = 'https://www.ikitelliturbocu.com';
 
 const staticPages = [
   '',

@@ -1,28 +1,31 @@
 ---
 import { Image } from 'astro:assets';
 
+import otomobil from '../assets/vehicle-types/otomobil-turbo.jpg';
 import isMakinesi from '../assets/vehicle-types/is-makinesi-turbo.jpg';
 import tir from '../assets/vehicle-types/tir-turbo.jpg';
 import yat from '../assets/vehicle-types/yat-marine-turbo.jpg';
 
 const vehicleTypes = [
   {
+    title: 'Otomobil Turbo',
+    description: 'Binek araçlar, SUV ve tüm otomobiller için turbo tamiri, revizyon ve satış hizmeti.',
+    image: otomobil
+  },
+  {
     title: 'İş Makinesi Turbo',
     description: 'Ekskavatör, loader, forklift ve tüm iş makineleri için turbo tamiri ve revizyon hizmeti.',
-    image: isMakinesi,
-    icon: '🚜'
+    image: isMakinesi
   },
   {
     title: 'Tır Turbo',
     description: 'Tır, kamyon ve ağır vasıta araçlar için profesyonel turbo servisi ve tamiri.',
-    image: tir,
-    icon: '🚛'
+    image: tir
   },
   {
     title: 'Yat & Marine Turbo',
     description: 'Tekne, yat ve deniz araçları için marine turbo tamiri ve revizyon hizmeti.',
-    image: yat,
-    icon: '⛵'
+    image: yat
   }
 ];
 ---
@@ -36,7 +39,7 @@ const vehicleTypes = [
       Otomobil, iş makinesi, tır ve deniz araçları için kapsamlı turbo hizmeti
     </p>
     
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
       {vehicleTypes.map((vehicle) => (
         <div class="bg-dark rounded-lg overflow-hidden border border-dark-lighter hover:border-primary transition-colors">
           <div class="aspect-[3/2] relative">
@@ -47,7 +50,6 @@ const vehicleTypes = [
               loading="lazy"
               quality={85}
             />
-            <div class="absolute top-4 left-4 text-4xl">{vehicle.icon}</div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-semibold mb-3 text-white">{vehicle.title}</h3>

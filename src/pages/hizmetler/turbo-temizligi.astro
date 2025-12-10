@@ -6,7 +6,7 @@ import heroImage from '../../assets/hizmetler/turbo-temizligi-hero.jpg';
 
 const pageTitle = 'Turbo Temizliği | İkitelli Turbocu | Profesyonel Turbo Temizleme Hizmeti';
 const pageDescription = 'İkitelli\'de profesyonel turbo temizleme hizmeti. Karbon birikintisi ve kirlerin giderilmesi. Turbo performansını artırın, ömrünü uzatın. Uygun fiyat garantisi.';
-const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-temizligi';
+const canonical = 'https://www.ikitelliturbocu.com/hizmetler/turbo-temizligi';
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -14,6 +14,72 @@ const canonical = 'https://ikitelliturbocu.com/hizmetler/turbo-temizligi';
     <title>{pageTitle}</title>
     <meta name="description" content={pageDescription} />
     <link rel="canonical" href={canonical} />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:image" content="https://www.ikitelliturbocu.com/images/og-image.jpg" />
+    <meta property="og:locale" content="tr_TR" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="twitter:image" content="https://www.ikitelliturbocu.com/images/og-image.jpg" />
+    
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Anasayfa",
+          "item": "https://www.ikitelliturbocu.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Hizmetler",
+          "item": "https://www.ikitelliturbocu.com/hizmetler"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Turbo Temizliği",
+          "item": canonical
+        }
+      ]
+    })} />
+    
+    <!-- Service Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Turbo Temizliği",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "İkitelli Turbocu",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "İOSB Mah. Güngören Bağcılar Sanayi Sitesi 15. Blok No: 13",
+          "addressLocality": "İkitelli",
+          "addressRegion": "İstanbul",
+          "addressCountry": "TR"
+        },
+        "telephone": "+905326584722",
+        "url": "https://www.ikitelliturbocu.com"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "İstanbul"
+      },
+      "description": pageDescription,
+      "url": canonical
+    })} />
   </head>
 
   <ServiceHero

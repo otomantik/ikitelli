@@ -4,7 +4,7 @@ import FAQ from '../components/FAQ.tsx';
 
 const pageTitle = 'Sıkça Sorulan Sorular | İkitelli Turbocu | Turbo Hizmetleri SSS';
 const pageDescription = 'Turbo tamiri, revizyon, satış ve servis hizmetlerimiz hakkında sıkça sorulan sorular. Turbo arızası, garanti, fiyatlandırma ve daha fazlası.';
-const canonical = 'https://ikitelliturbocu.com/sss';
+const canonical = 'https://www.ikitelliturbocu.com/sss';
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -34,13 +34,85 @@ const canonical = 'https://ikitelliturbocu.com/sss';
           "@type": "ListItem",
           "position": 1,
           "name": "Anasayfa",
-          "item": "https://ikitelliturbocu.com/"
+          "item": "https://www.ikitelliturbocu.com/"
         },
         {
           "@type": "ListItem",
           "position": 2,
           "name": "Sıkça Sorulan Sorular",
           "item": canonical
+        }
+      ]
+    })} />
+    
+    <!-- FAQPage Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Turbo arızası nasıl anlaşılır?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turbo arızasının belirtileri arasında siyah veya mavi duman çıkması, güç kaybı, aşırı gürültü, yağ tüketiminde artış ve motor arıza lambasının yanması sayılabilir. Ücretsiz arıza tespiti için bize ulaşabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Turbo revizyonu ne kadar sürer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Turbo revizyon süresi arızanın durumuna göre değişir. Genellikle 1-2 gün içinde tamamlanır. Acil durumlarda aynı gün teslim imkânımız da bulunmaktadır."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Garanti var mı?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, tüm revizyon ve tamir işlemlerimizde yazılı garanti sunuyoruz. Garanti süresi ve kapsamı hakkında detaylı bilgi için bize ulaşabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fiyat nasıl belirleniyor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fiyatlandırma turbo markası, arıza tipi ve gerekli yedek parçalara göre belirlenir. Öncelikle ücretsiz arıza tespiti yapıyoruz, ardından şeffaf bir şekilde fiyat teklifi sunuyoruz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hangi marka turboları tamir ediyorsunuz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tüm marka turboları (Garrett, BorgWarner, Holset, IHI, Mitsubishi, Cummins, KKK vb.) tamir ve revizyon hizmeti veriyoruz. Uzman ekibimiz her marka için deneyimlidir."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "İstanbul dışına parça gönderimi yapıyor musunuz?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, Türkiye'nin her yerine revizyonlu turbo gönderimi yapıyoruz. Kargo süresi ve fiyat bilgisi için bize ulaşabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ödeme şekli nedir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nakit, kredi kartı ve banka havalesi ile ödeme kabul ediyoruz. Detaylı bilgi için bize ulaşabilirsiniz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Çalışma saatleri nelerdir?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Her gün (Pazar dahil) 09:00 - 20:00 saatleri arasında hizmet veriyoruz. Acil durumlar için WhatsApp üzerinden 7/24 ulaşabilirsiniz."
+          }
         }
       ]
     })} />
