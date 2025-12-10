@@ -137,9 +137,9 @@ import Logo from './Logo.tsx';
     <!-- Mobile Menu -->
     <div 
       id="mobile-menu" 
-      class="hidden lg:hidden relative z-[10000] mt-3 border-t border-dark-lighter pt-3 transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 bg-dark"
+      class="hidden lg:hidden fixed inset-0 top-[73px] z-[10000] bg-dark transform transition-all duration-300 ease-in-out opacity-0 -translate-y-4 overflow-y-auto"
     >
-      <div class="flex flex-col gap-2.5 pb-2">
+      <div class="flex flex-col gap-2.5 pb-6 pt-4 px-4">
         <a 
           href="/" 
           class="text-gray-300 hover:text-primary transition-colors py-2 px-3 rounded-lg hover:bg-dark-light text-base font-medium"
