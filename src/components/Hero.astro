@@ -109,13 +109,22 @@ import heroPoster from '../assets/hero/hero-poster.jpg';
     <div class="md:hidden flex justify-center mt-6 mb-4">
       <a 
         href="#hizmetler" 
-        class="flex flex-col items-center gap-2 text-gray-400 hover:text-primary transition-colors animate-bounce"
+        class="flex flex-col items-center gap-3 group"
         aria-label="Aşağı kaydır"
       >
-        <span class="text-xs font-medium">Aşağı kaydır</span>
-        <svg class="w-6 h-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </svg>
+        <!-- Yanıp Sönen Noktalar -->
+        <div class="flex gap-1.5">
+          <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0s;"></div>
+          <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.2s;"></div>
+          <div class="w-2 h-2 rounded-full bg-primary animate-pulse" style="animation-delay: 0.4s;"></div>
+        </div>
+        <!-- Gradient Ok -->
+        <div class="relative">
+          <svg class="w-7 h-7 text-primary animate-bounce group-hover:text-primary-dark transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+          <div class="absolute inset-0 bg-gradient-to-b from-primary via-primary/50 to-transparent opacity-50 animate-pulse"></div>
+        </div>
       </a>
     </div>
   </div>
