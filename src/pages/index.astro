@@ -28,6 +28,8 @@ import Testimonials from '../components/Testimonials.astro';
 import Gallery from '../components/Gallery.astro';
 import FAQ from '../components/FAQ.tsx';
 
+import heroPoster from '../assets/hero/hero-poster.jpg';
+
 const pageTitle = 'İkitelli Turbocu | Turbo Tamiri, Turbo Revizyon, Turbo Satış İstanbul';
 const pageDescription = 'İkitelli\'de profesyonel turbo tamiri, turbo revizyon ve turbo satış hizmeti. Bilgisayarlı arıza tespiti, garantili işçilik, aynı gün teslim. Tüm marka turbo için uzman servis. Ücretsiz arıza tespiti. Hemen arayın: +90 532 658 47 22';
 const canonical = 'https://www.ikitelliturbocu.com/';
@@ -150,6 +152,9 @@ const ogImage = 'https://www.ikitelliturbocu.com/images/og-image.jpg';
         }
       ]
     })} />
+    
+    <!-- Preload LCP Image -->
+    <link rel="preload" as="image" href={heroPoster.src} fetchpriority="high" />
   </head>
 
   <Hero />

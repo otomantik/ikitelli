@@ -7,6 +7,14 @@ import heroPoster from '../assets/hero/hero-poster.jpg';
   <!-- Video - Mobilde header'ın hemen altında, tam genişlik -->
   <div class="w-full md:hidden m-0">
     <div class="aspect-video bg-dark-lighter relative">
+      <Image
+        src={heroPoster}
+        alt="Turbo tamiri tanıtım videosu poster"
+        class="absolute inset-0 w-full h-full object-cover"
+        loading="eager"
+        fetchpriority="high"
+        quality={85}
+      />
       <video
         class="absolute inset-0 w-full h-full object-cover"
         autoplay
@@ -14,7 +22,6 @@ import heroPoster from '../assets/hero/hero-poster.jpg';
         loop
         playsinline
         preload="none"
-        loading="lazy"
         aria-label="Turbo tamiri tanıtım videosu"
         poster={heroPoster.src}
       >
@@ -74,6 +81,14 @@ import heroPoster from '../assets/hero/hero-poster.jpg';
       <!-- Video - Desktop'ta sağda -->
       <div class="hidden md:block relative rounded-lg overflow-hidden shadow-2xl">
         <div class="aspect-video bg-dark-lighter relative">
+          <Image
+            src={heroPoster}
+            alt="Turbo tamiri tanıtım videosu poster"
+            class="absolute inset-0 w-full h-full object-cover"
+            loading="eager"
+            fetchpriority="high"
+            quality={85}
+          />
           <video
             class="absolute inset-0 w-full h-full object-cover"
             autoplay
@@ -81,7 +96,6 @@ import heroPoster from '../assets/hero/hero-poster.jpg';
             loop
             playsinline
             preload="none"
-            loading="lazy"
             aria-label="Turbo tamiri tanıtım videosu"
             poster={heroPoster.src}
           >
