@@ -156,3 +156,4 @@ npm run preview
 - [ ] Lighthouse test (production'da)
 - [ ] Real User Monitoring (RUM) kurulumu
 
+

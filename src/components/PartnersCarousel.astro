@@ -1,0 +1,125 @@
+---
+import { Image } from 'astro:assets';
+
+// Partner logolarını import edin
+import schweitzer from '../assets/partners/schweitzer-logo.webp';
+import toyotaTurbo from '../assets/partners/toyota-turbo-logo.webp';
+import turboLoader from '../assets/partners/turbo-loader.webp';
+import mitsubishiTurbo from '../assets/partners/mitsubishi-turbo.webp';
+import holset from '../assets/partners/holset-logo.webp';
+import ihs from '../assets/partners/ihs-logo.webp';
+import garret from '../assets/partners/garret-partner.webp';
+import barg from '../assets/partners/barg-turbo-logo.webp';
+
+const partners: Array<{ name: string; imageSrc: any }> = [
+  { name: 'Schweitzer', imageSrc: schweitzer },
+  { name: 'Toyota Turbo', imageSrc: toyotaTurbo },
+  { name: 'Turbo Loader', imageSrc: turboLoader },
+  { name: 'Mitsubishi Turbo', imageSrc: mitsubishiTurbo },
+  { name: 'Holset', imageSrc: holset },
+  { name: 'IHS', imageSrc: ihs },
+  { name: 'Garrett', imageSrc: garret },
+  { name: 'Barg Turbo', imageSrc: barg },
+];
+---
+
+<section class="py-12 md:py-16 bg-dark overflow-hidden">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 text-white">
+      <span class="text-primary">Partnerlerimiz</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+      Güvenilir turbo markaları ve yedek parça tedarikçileri ile çalışıyoruz.
+    </p>
+    
+    <!-- Carousel Container -->
+    <div class="relative">
+      <!-- Gradient Overlays -->
+      <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-dark to-transparent z-10 pointer-events-none"></div>
+      <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-dark to-transparent z-10 pointer-events-none"></div>
+      
+      <!-- Carousel -->
+      <div class="carousel-container overflow-hidden">
+        <div class="carousel-track-reverse flex gap-8 animate-scroll-reverse">
+          <!-- İlk set -->
+          {partners.map((partner) => (
+            <div class="carousel-item flex-shrink-0 w-32 h-16 md:w-40 md:h-20 bg-white rounded-lg p-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+              <div class="w-full h-full flex items-center justify-center">
+                <Image
+                  src={partner.imageSrc}
+                  alt={`${partner.name} logo`}
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                  quality={85}
+                />
+              </div>
+            </div>
+          ))}
+          
+          <!-- İkinci set (infinite scroll için) -->
+          {partners.map((partner) => (
+            <div class="carousel-item flex-shrink-0 w-32 h-16 md:w-40 md:h-20 bg-white rounded-lg p-3 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+              <div class="w-full h-full flex items-center justify-center">
+                <Image
+                  src={partner.imageSrc}
+                  alt={`${partner.name} logo`}
+                  class="w-full h-full object-contain"
+                  loading="lazy"
+                  quality={85}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .carousel-container {
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      black 10%,
+      black 90%,
+      transparent 100%
+    );
+  }
+
+  .carousel-track-reverse {
+    width: fit-content;
+  }
+
+  @keyframes scroll-reverse {
+    0% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  .animate-scroll-reverse {
+    animation: scroll-reverse 30s linear infinite;
+  }
+
+  .animate-scroll-reverse:hover {
+    animation-play-state: paused;
+  }
+
+  /* Pause animation on reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-scroll-reverse {
+      animation: none;
+    }
+  }
+</style>
+

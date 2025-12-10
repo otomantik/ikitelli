@@ -146,3 +146,4 @@ npm run build
 - Cloudflare Pages'de environment variables'ları kontrol edin
 - `PUBLIC_` prefix'i kullanın (ör: `PUBLIC_GTM_ID`)
 
+

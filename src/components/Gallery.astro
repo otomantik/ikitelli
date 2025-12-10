@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+
+// Galeri resimlerini import edin
+import galeri1 from '../assets/gallery/turbo-galeri-1.webp';
+import galeri2 from '../assets/gallery/turbo-galeri-2.webp';
+import galeri3 from '../assets/gallery/turbo-galeri-3.webp';
+import galeri4 from '../assets/gallery/turbo-galeri-4.webp';
+import galeri5 from '../assets/gallery/turbo-galeri-5.webp';
+import galeri6 from '../assets/gallery/turbo-galeri-6.webp';
+
+const galleryImages = [
+  { src: galeri1, alt: 'Turbo tamiri atölye görseli 1' },
+  { src: galeri2, alt: 'Turbo tamiri atölye görseli 2' },
+  { src: galeri3, alt: 'Turbo tamiri atölye görseli 3' },
+  { src: galeri4, alt: 'Turbo tamiri atölye görseli 4' },
+  { src: galeri5, alt: 'Turbo tamiri atölye görseli 5' },
+  { src: galeri6, alt: 'Turbo tamiri atölye görseli 6' },
+];
+---
+
+<section class="py-12 md:py-20 bg-dark-light">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-white">
+      Atölye <span class="text-primary">Galerimiz</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+      Modern ekipmanlarımız ve profesyonel çalışma ortamımız
+    </p>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {galleryImages.map((image) => (
+        <div class="relative aspect-[4/3] rounded-lg overflow-hidden group cursor-pointer">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            loading="lazy"
+            quality={85}
+          />
+          <div class="absolute inset-0 bg-dark/0 group-hover:bg-dark/20 transition-colors duration-300"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+

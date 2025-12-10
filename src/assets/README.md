@@ -59,3 +59,4 @@ SVG formatında marka logoları (opsiyonel):
 - Video dosyaları için `preload="none"` kullanılıyor (performans için)
 
 
+

@@ -16,3 +16,4 @@ Allow: /hizmetler/
 Allow: /gizlilik-politikasi
 Allow: /kullanim-sartlari
 
+
