@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import ServiceDetail from '../../components/ServiceDetail.astro';
+import CarBrandsCarousel from '../../components/CarBrandsCarousel.astro';
+import PartnersCarousel from '../../components/PartnersCarousel.astro';
 import heroImage from '../../assets/hizmetler/turbo-revizyonu-hero.jpg';
 
 const pageTitle = 'Turbo Revizyonu | İkitelli Turbocu | Yeniden Üretim Kalitesinde Revizyon';
@@ -125,6 +127,9 @@ const canonical = 'https://www.ikitelliturbocu.com/hizmetler/turbo-revizyonu';
       }
     ]}
   />
+  
+  <CarBrandsCarousel />
+  <PartnersCarousel />
 </BaseLayout>
 
 

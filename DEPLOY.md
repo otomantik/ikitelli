@@ -32,9 +32,10 @@ git push -u origin main
 
 ### Adım 3: Environment Variables (Opsiyonel)
 
-Eğer GTM ID gibi environment variable'lar kullanıyorsanız:
+GTM ID kodda fallback olarak ayarlanmıştır (`GTM-5ZCTR3GC`). İsterseniz Cloudflare Pages'de environment variable olarak da ekleyebilirsiniz:
 - **Settings** → **Environment variables** → **Add variable**
-- `PUBLIC_GTM_ID` gibi değişkenleri ekleyin
+- **Variable name**: `PUBLIC_GTM_ID`
+- **Value**: `GTM-5ZCTR3GC`
 
 ### Adım 4: Deploy
 

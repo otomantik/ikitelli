@@ -2,24 +2,47 @@
 
 ## Overview
 
-Google Tag Manager is integrated into the İkitelli Turbocu website in a **non-blocking, performance-safe** manner. The GTM script loads asynchronously and does not block page rendering.
+Google Tag Manager is integrated into the İkitelli Turbocu website in a **non-blocking, performance-safe** manner with **dataLayer** support for comprehensive event tracking. The GTM script loads asynchronously and does not block page rendering.
 
-## Environment Variable
+## Configuration
 
-Set the following environment variable:
+### GTM ID
 
-- **Variable Name**: `PUBLIC_GTM_ID`
-- **Example Value**: `GTM-XXXXXXX`
+- **Current GTM ID**: `GTM-5ZCTR3GC` (hardcoded as fallback)
+- **Environment Variable**: `PUBLIC_GTM_ID` (optional, overrides hardcoded value)
 - **Location**: Cloudflare Pages → Settings → Environment Variables (or `.env` file for local dev)
 
 ## Implementation Details
 
 ### Components
 
-- **GTMHead.astro** - Injects GTM script in `<head>`
+- **GTMHead.astro** - Initializes dataLayer and injects GTM script in `<head>`
 - **GTMBody.astro** - Injects noscript fallback in `<body>`
+- **BaseLayout.astro** - Contains inline event tracking script for automatic event capture
+- **utils/gtm.ts** - Utility functions for manual event tracking
 
-Both components check for `PUBLIC_GTM_ID` and only render if present.
+### DataLayer Structure
+
+The dataLayer is automatically initialized on page load with the following structure:
+
+```javascript
+window.dataLayer = window.dataLayer || [];
+window.dataLayer.push({
+  'page_path': window.location.pathname,
+  'page_title': document.title,
+  'page_location': window.location.href
+});
+```
+
+### Automatic Event Tracking
+
+The following events are automatically tracked via inline script in BaseLayout:
+
+1. **Page View** - Fired on every page load
+2. **Phone Click** - Fired when user clicks `tel:` links
+3. **WhatsApp Click** - Fired when user clicks WhatsApp links
+4. **Social Media Click** - Fired when user clicks Instagram/Facebook links
+5. **Service Click** - Fired when user clicks service detail links
 
 ### Performance Features
 
@@ -49,45 +72,64 @@ Both components check for `PUBLIC_GTM_ID` and only render if present.
 **Tag Type**: Google Analytics: GA4 Event  
 **Event Name**: `phone_click`  
 **Trigger**: 
-- Trigger Type: Click - All Elements
-- Condition: Click Element matches CSS selector `a[href^="tel:"]`
+- Trigger Type: **Custom Event**
+- Event name: `phone_click`
 
-**Additional Data** (Optional):
-- `phone_number`: `{{Click URL}}`
-- `location`: `{{Page Path}}`
+**Event Parameters** (automatically sent via dataLayer):
+- `phone_number`: Phone number that was clicked
+- `location`: Page path where click occurred
+- `page_path`: Current page path
 
 ### 4. WhatsApp Click Tracking
 
 **Tag Type**: Google Analytics: GA4 Event  
 **Event Name**: `whatsapp_click`  
 **Trigger**: 
-- Trigger Type: Click - All Elements
-- Condition: Click Element matches CSS selector `a[href*="wa.me"]`
+- Trigger Type: **Custom Event**
+- Event name: `whatsapp_click`
 
-**Additional Data** (Optional):
-- `service_type`: Extract from link text or data attributes
-- `location`: `{{Page Path}}`
+**Event Parameters** (automatically sent via dataLayer):
+- `location`: Page path where click occurred
+- `page_path`: Current page path
 
-### 5. Service Detail Click Tracking
+### 5. Service Click Tracking
 
 **Tag Type**: Google Analytics: GA4 Event  
-**Event Name**: `service_detail_click`  
+**Event Name**: `service_click`  
 **Trigger**: 
-- Trigger Type: Click - All Elements
-- Condition: Click Element matches CSS selector containing "Detaylı Bilgi Al" or service card
+- Trigger Type: **Custom Event**
+- Event name: `service_click`
 
-**Additional Data**:
-- `service_name`: Extract from card title or data attribute
+**Event Parameters** (automatically sent via dataLayer):
+- `service_name`: Name of the service clicked
+- `service_url`: URL of the service page
+- `page_path`: Current page path
 
-### 6. FAQ Accordion Interaction
+### 6. FAQ Expand Tracking
 
 **Tag Type**: Google Analytics: GA4 Event  
 **Event Name**: `faq_expand`  
 **Trigger**: 
-- Trigger Type: Custom Event
-- Event name: Custom event fired from FAQ component (requires additional code)
+- Trigger Type: **Custom Event**
+- Event name: `faq_expand`
 
-**Alternative**: Use Click trigger on FAQ buttons
+**Event Parameters** (automatically sent via dataLayer):
+- `faq_question`: The question that was expanded
+- `faq_id`: Unique identifier for the FAQ item
+- `page_path`: Current page path
+
+### 7. Social Media Click Tracking
+
+**Tag Type**: Google Analytics: GA4 Event  
+**Event Name**: `social_click`  
+**Trigger**: 
+- Trigger Type: **Custom Event**
+- Event name: `social_click`
+
+**Event Parameters** (automatically sent via dataLayer):
+- `social_platform`: Platform name (instagram, facebook)
+- `social_url`: Full URL of the social media link
+- `page_path`: Current page path
 
 ### 7. Scroll Depth Tracking
 
@@ -103,18 +145,91 @@ Both components check for `PUBLIC_GTM_ID` and only render if present.
 **Event Name**: `form_submit`  
 **Trigger**: Form submission (configure based on form implementation)  
 
-## Data Layer Events
+## DataLayer Events Reference
 
-You can push custom events to the dataLayer for more advanced tracking:
+### Automatic Events
 
+These events are automatically tracked by the inline script:
+
+#### 1. Page View
 ```javascript
-// Example: Track service card click
-dataLayer.push({
+{
+  'event': 'page_view',
+  'page_path': '/hizmetler/turbo-tamiri',
+  'page_title': 'Turbo Tamiri | İkitelli Turbocu',
+  'page_location': 'https://www.ikitelliturbocu.com/hizmetler/turbo-tamiri'
+}
+```
+
+#### 2. Phone Click
+```javascript
+{
+  'event': 'phone_click',
+  'phone_number': '+905326584722',
+  'location': '/hizmetler/turbo-tamiri',
+  'page_path': '/hizmetler/turbo-tamiri'
+}
+```
+
+#### 3. WhatsApp Click
+```javascript
+{
+  'event': 'whatsapp_click',
+  'location': '/hizmetler/turbo-tamiri',
+  'page_path': '/hizmetler/turbo-tamiri'
+}
+```
+
+#### 4. Social Media Click
+```javascript
+{
+  'event': 'social_click',
+  'social_platform': 'instagram', // or 'facebook'
+  'social_url': 'https://www.instagram.com/...',
+  'page_path': '/hizmetler/turbo-tamiri'
+}
+```
+
+#### 5. Service Click
+```javascript
+{
   'event': 'service_click',
   'service_name': 'Turbo Tamiri',
-  'service_location': 'services_section'
-});
+  'service_url': 'https://www.ikitelliturbocu.com/hizmetler/turbo-tamiri',
+  'page_path': '/'
+}
 ```
+
+### Manual Event Tracking
+
+For custom events, use the utility functions from `src/utils/gtm.ts`:
+
+```typescript
+import { trackFAQExpand, trackCTAClick, trackScrollDepth } from '../utils/gtm';
+
+// Track FAQ expand
+trackFAQExpand('Turbo arızası nasıl anlaşılır?', 'faq-0');
+
+// Track CTA click
+trackCTAClick('Hemen Ara', 'hero_section');
+
+// Track scroll depth
+trackScrollDepth(50); // 50% scrolled
+```
+
+### Available Utility Functions
+
+- `trackPageView(pagePath, pageTitle?)` - Track page views
+- `trackPhoneClick(phoneNumber, location?)` - Track phone clicks
+- `trackWhatsAppClick(location?, serviceType?)` - Track WhatsApp clicks
+- `trackServiceClick(serviceName, serviceUrl)` - Track service clicks
+- `trackFAQExpand(question, faqId?)` - Track FAQ expansions
+- `trackSocialClick(platform, url)` - Track social media clicks
+- `trackCTAClick(ctaText, ctaLocation)` - Track CTA button clicks
+- `trackScrollDepth(percentage)` - Track scroll depth
+- `trackFormSubmit(formName, formLocation)` - Track form submissions
+- `trackVideoPlay(videoName, videoLocation)` - Track video plays
+- `trackExternalLink(url, linkText?)` - Track external link clicks
 
 ## Testing
 

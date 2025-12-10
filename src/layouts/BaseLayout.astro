@@ -64,6 +64,114 @@ const { title, description } = Astro.props;
     </main>
     <MobileContactBar />
     <Footer />
+    
+    <!-- GTM Event Tracking Script -->
+    <script is:inline>
+      (function() {
+        // Track page view
+        if (typeof window !== 'undefined' && window.dataLayer) {
+          window.dataLayer.push({
+            'event': 'page_view',
+            'page_path': window.location.pathname,
+            'page_title': document.title,
+            'page_location': window.location.href
+          });
+        }
+
+        // Setup event listeners after DOM is ready
+        function setupGTMListeners() {
+          // Track phone clicks
+          document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+              var href = this.href;
+              var phoneNumber = href.replace('tel:', '');
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  'event': 'phone_click',
+                  'phone_number': phoneNumber,
+                  'location': window.location.pathname,
+                  'page_path': window.location.pathname
+                });
+              }
+            });
+          });
+
+          // Track WhatsApp clicks
+          document.querySelectorAll('a[href*="wa.me"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  'event': 'whatsapp_click',
+                  'location': window.location.pathname,
+                  'page_path': window.location.pathname
+                });
+              }
+            });
+          });
+
+          // Track social media clicks - Use event delegation for better reliability
+          // This captures clicks on social links even if they're added dynamically
+          document.addEventListener('click', function(e) {
+            var target = e.target;
+            // Find the closest anchor tag
+            var anchor = target;
+            while (anchor && anchor.nodeName !== 'A' && anchor !== document.body) {
+              anchor = anchor.parentElement;
+            }
+            
+            if (anchor && anchor.href && anchor.nodeName === 'A') {
+              var href = anchor.href.toLowerCase();
+              var platform = null;
+              
+              // Check for Instagram (more comprehensive check)
+              if (href.indexOf('instagram.com') !== -1 || href.indexOf('instagram') !== -1) {
+                platform = 'instagram';
+              }
+              // Check for Facebook
+              else if (href.indexOf('facebook.com') !== -1 || href.indexOf('facebook') !== -1) {
+                platform = 'facebook';
+              }
+              
+              // Track if it's a social media link
+              if (platform && window.dataLayer) {
+                window.dataLayer.push({
+                  'event': 'social_click',
+                  'social_platform': platform,
+                  'social_url': anchor.href,
+                  'page_path': window.location.pathname,
+                  'link_text': anchor.textContent ? anchor.textContent.trim().substring(0, 100) : '',
+                  'link_location': anchor.closest('header') ? 'header' : 
+                                  anchor.closest('footer') ? 'footer' : 
+                                  anchor.closest('nav') ? 'navigation' : 'content'
+                });
+              }
+            }
+          }, true); // Use capture phase for better reliability
+
+          // Track service detail clicks
+          document.querySelectorAll('a[href^="/hizmetler/"]').forEach(function(link) {
+            link.addEventListener('click', function(e) {
+              var serviceName = this.getAttribute('data-gtm-service') || this.textContent.trim() || 'Unknown';
+              if (window.dataLayer) {
+                window.dataLayer.push({
+                  'event': 'service_click',
+                  'service_name': serviceName,
+                  'service_url': this.href,
+                  'page_path': window.location.pathname
+                });
+              }
+            });
+          });
+        }
+
+        // Wait for DOM to be ready
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', setupGTMListeners);
+        } else {
+          setupGTMListeners();
+        }
+      })();
+    </script>
   </body>
 </html>
 

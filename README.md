@@ -70,8 +70,8 @@ npm run preview
    - **Build command**: `npm run build`
    - **Build output directory**: `dist`
    - **Node version**: `18` or higher
-3. Add environment variables:
-   - **PUBLIC_GTM_ID**: Your Google Tag Manager Container ID (e.g., `GTM-XXXXXXX`)
+3. Add environment variables (optional):
+   - **PUBLIC_GTM_ID**: Google Tag Manager Container ID (default: `GTM-5ZCTR3GC` - already set in code)
 4. Deploy!
 
 ## 📊 Google Tag Manager (GTM) Setup
@@ -80,9 +80,10 @@ npm run preview
 
 GTM is integrated in a non-blocking, performance-safe way:
 
-1. Set `PUBLIC_GTM_ID` environment variable in Cloudflare Pages (or `.env` for local development)
-2. GTM scripts load asynchronously and don't block page rendering
-3. Components are located in:
+1. GTM ID is set as fallback in code: `GTM-5ZCTR3GC`
+2. Optionally, you can set `PUBLIC_GTM_ID` environment variable in Cloudflare Pages (or `.env` for local development) to override
+3. GTM scripts load asynchronously and don't block page rendering
+4. Components are located in:
    - `src/components/GTMHead.astro` - Head script
    - `src/components/GTMBody.astro` - Noscript fallback
 

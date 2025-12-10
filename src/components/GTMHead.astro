@@ -1,9 +1,15 @@
 ---
-const GTMID = import.meta.env.PUBLIC_GTM_ID;
+const GTMID = import.meta.env.PUBLIC_GTM_ID || 'GTM-5ZCTR3GC';
 
-if (!GTMID) {
-  console.warn("GTM ID is missing: PUBLIC_GTM_ID");
-}
+// Initialize dataLayer before GTM script
+const dataLayerInit = `
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({
+    'page_path': window.location.pathname,
+    'page_title': document.title,
+    'page_location': window.location.href
+  });
+`;
 
 const gtmScript = GTMID ? `
   (function(w,d,s,l,i){
@@ -17,6 +23,11 @@ const gtmScript = GTMID ? `
   })(window,document,'script','dataLayer','${GTMID}');
 ` : '';
 ---
+
+<!-- Google Tag Manager - DataLayer Initialization -->
+{GTMID && (
+  <script is:inline set:html={dataLayerInit} />
+)}
 
 <!-- Google Tag Manager -->
 {GTMID && (

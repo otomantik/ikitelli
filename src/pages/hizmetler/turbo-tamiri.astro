@@ -2,6 +2,8 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import ServiceHero from '../../components/ServiceHero.astro';
 import ServiceDetail from '../../components/ServiceDetail.astro';
+import CarBrandsCarousel from '../../components/CarBrandsCarousel.astro';
+import PartnersCarousel from '../../components/PartnersCarousel.astro';
 import heroImage from '../../assets/hizmetler/turbo-tamiri-hero.jpg';
 
 const pageTitle = 'Turbo Tamiri | İkitelli Turbocu | Profesyonel Turbo Onarım Hizmeti';
@@ -124,5 +126,8 @@ const canonical = 'https://www.ikitelliturbocu.com/hizmetler/turbo-tamiri';
       }
     ]}
   />
+  
+  <CarBrandsCarousel />
+  <PartnersCarousel />
 </BaseLayout>
 

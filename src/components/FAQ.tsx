@@ -1,4 +1,5 @@
 import { useState, memo } from 'react';
+import { trackFAQExpand } from '../utils/gtm';
 
 interface FAQItem {
   question: string;
@@ -44,7 +45,13 @@ const FAQ = memo(function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggleFAQ = (index: number) => {
+    const isOpening = openIndex !== index;
     setOpenIndex(prevIndex => prevIndex === index ? null : index);
+    
+    // Track FAQ expand event
+    if (isOpening) {
+      trackFAQExpand(faqData[index].question, `faq-${index}`);
+    }
   };
 
   return (
