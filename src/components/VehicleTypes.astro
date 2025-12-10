@@ -1,0 +1,61 @@
+---
+import { Image } from 'astro:assets';
+
+import isMakinesi from '../assets/vehicle-types/is-makinesi-turbo.jpg';
+import tir from '../assets/vehicle-types/tir-turbo.jpg';
+import yat from '../assets/vehicle-types/yat-marine-turbo.jpg';
+
+const vehicleTypes = [
+  {
+    title: 'İş Makinesi Turbo',
+    description: 'Ekskavatör, loader, forklift ve tüm iş makineleri için turbo tamiri ve revizyon hizmeti.',
+    image: isMakinesi,
+    icon: '🚜'
+  },
+  {
+    title: 'Tır Turbo',
+    description: 'Tır, kamyon ve ağır vasıta araçlar için profesyonel turbo servisi ve tamiri.',
+    image: tir,
+    icon: '🚛'
+  },
+  {
+    title: 'Yat & Marine Turbo',
+    description: 'Tekne, yat ve deniz araçları için marine turbo tamiri ve revizyon hizmeti.',
+    image: yat,
+    icon: '⛵'
+  }
+];
+---
+
+<section class="py-12 md:py-20 bg-dark-light">
+  <div class="container mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-bold text-center mb-4 text-white">
+      Hizmet Verdiğimiz <span class="text-primary">Araç Tipleri</span>
+    </h2>
+    <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto text-sm md:text-base">
+      Otomobil, iş makinesi, tır ve deniz araçları için kapsamlı turbo hizmeti
+    </p>
+    
+    <div class="grid md:grid-cols-3 gap-8">
+      {vehicleTypes.map((vehicle) => (
+        <div class="bg-dark rounded-lg overflow-hidden border border-dark-lighter hover:border-primary transition-colors">
+          <div class="aspect-[3/2] relative">
+            <Image
+              src={vehicle.image}
+              alt={vehicle.title}
+              class="w-full h-full object-cover"
+              loading="lazy"
+              quality={85}
+            />
+            <div class="absolute top-4 left-4 text-4xl">{vehicle.icon}</div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-semibold mb-3 text-white">{vehicle.title}</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">{vehicle.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
